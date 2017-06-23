@@ -32,9 +32,12 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Data Karyawan"/>
               </Properties>
+<<<<<<< HEAD
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuDataKaryawanActionPerformed"/>
               </Events>
+=======
+>>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
             </MenuItem>
           </SubComponents>
         </Menu>

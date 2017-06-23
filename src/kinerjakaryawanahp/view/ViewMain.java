@@ -55,11 +55,14 @@ public class ViewMain extends javax.swing.JFrame {
         jMenu4.setText("Master Data");
 
         mnuDataKaryawan.setText("Data Karyawan");
+<<<<<<< HEAD
         mnuDataKaryawan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuDataKaryawanActionPerformed(evt);
             }
         });
+=======
+>>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
         jMenu4.add(mnuDataKaryawan);
 
         jMenuBar2.add(jMenu4);
@@ -86,11 +89,14 @@ public class ViewMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     private void mnuDataKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuDataKaryawanActionPerformed
         // TODO add your handling code here:
         new ViewKaryawan().setVisible(true);
     }//GEN-LAST:event_mnuDataKaryawanActionPerformed
 
+=======
+>>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

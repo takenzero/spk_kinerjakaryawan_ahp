@@ -130,9 +130,12 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnLogin">
           <Properties>
+<<<<<<< HEAD
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/kinerjakaryawanahp/img/success.png"/>
             </Property>
+=======
+>>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
             <Property name="text" type="java.lang.String" value="LOGIN"/>
           </Properties>
           <Events>
