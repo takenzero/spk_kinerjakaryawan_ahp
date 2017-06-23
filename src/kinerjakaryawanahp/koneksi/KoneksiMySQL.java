@@ -21,11 +21,7 @@ public class KoneksiMySQL {
             MysqlDataSource data = new MysqlDataSource();
             data.setDatabaseName("db_kinerjakaryawanahp");
             data.setUser("root");
-<<<<<<< HEAD
             data.setPassword("password*5");
-=======
-            data.setPassword("");
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
             try{
                 con = data.getConnection();
             }catch(SQLException ex){

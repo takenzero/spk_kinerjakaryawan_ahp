@@ -5,7 +5,6 @@
  */
 package kinerjakaryawanahp.view;
 
-<<<<<<< HEAD
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,8 +17,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import kinerjakaryawanahp.controller.ControllerKaryawan;
 
-=======
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
 /**
  *
  * @author TAKEN ZERO
@@ -29,7 +26,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
     /**
      * Creates new form ViewKaryawan
      */
-<<<<<<< HEAD
     ControllerKaryawan ctr;
             
     public ViewKaryawan() {
@@ -37,10 +33,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
         ctr = new ControllerKaryawan(this);
         ctr.isiTable();
         setLocationRelativeTo(null);
-=======
-    public ViewKaryawan() {
-        initComponents();
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
     }
 
     /**
@@ -64,12 +56,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtTempat = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-<<<<<<< HEAD
         txtTanggal = new javax.swing.JFormattedTextField();
-=======
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jLabel7 = new javax.swing.JLabel();
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAlamat = new javax.swing.JTextArea();
@@ -86,15 +73,11 @@ public class ViewKaryawan extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblKaryawan = new javax.swing.JTable();
 
-<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("DATA KARYAWAN");
         setAlwaysOnTop(true);
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
-=======
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -115,17 +98,8 @@ public class ViewKaryawan extends javax.swing.JFrame {
 
         jLabel6.setText("/");
 
-<<<<<<< HEAD
         txtTanggal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyy"))));
         txtTanggal.setToolTipText("dd/MM/yyyy");
-=======
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyy"))));
-        jFormattedTextField1.setToolTipText("dd/MM/yyyy");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel7.setText("(dd/MM/yyyy; cth: 18/09/1991)");
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
 
         jLabel8.setText("Alamat");
 
@@ -142,7 +116,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
@@ -166,46 +139,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
                         .addComponent(cboAgama, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cboKelamin, javax.swing.GroupLayout.Alignment.LEADING, 0, 138, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(cboKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cboAgama, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtIdKaryawan, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtNama)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTempat, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,12 +164,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtTempat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-<<<<<<< HEAD
                     .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
@@ -248,7 +176,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-<<<<<<< HEAD
         btnTambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/plus.png"))); // NOI18N
         btnTambah.setText("  Tambah");
         btnTambah.addActionListener(new java.awt.event.ActionListener() {
@@ -270,30 +197,17 @@ public class ViewKaryawan extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-=======
-        btnTambah.setText("Tambah");
-
-        btnSimpan.setText("Simpan");
-
-        btnHapus.setText("Hapus");
-
-        btnReset.setText("Reset");
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel10.setText("Cari (Id Karyawan/Nama)");
 
-<<<<<<< HEAD
         btnCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/search.png"))); // NOI18N
         btnCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCariActionPerformed(evt);
             }
         });
-=======
-        btnCari.setText("Cari");
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -330,7 +244,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-<<<<<<< HEAD
         tblKaryawan.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tblKaryawan.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tblKaryawan.getTableHeader().setReorderingAllowed(false);
@@ -339,8 +252,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
                 tblKaryawanMouseClicked(evt);
             }
         });
-=======
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
         jScrollPane2.setViewportView(tblKaryawan);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -349,7 +260,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -362,23 +272,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
                         .addComponent(btnHapus, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
-=======
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -387,11 +280,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-=======
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
                     .addComponent(btnTambah)
                     .addComponent(btnSimpan)
                     .addComponent(btnHapus)
@@ -405,7 +294,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-<<<<<<< HEAD
     
     public JTextField getTxtIdKaryawan(){
         return txtIdKaryawan;
@@ -494,43 +382,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnTambahActionPerformed
 
-=======
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewKaryawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewKaryawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewKaryawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewKaryawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ViewKaryawan().setVisible(true);
-            }
-        });
-    }
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
@@ -540,10 +391,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
     private javax.swing.JButton btnTambah;
     private javax.swing.JComboBox<String> cboAgama;
     private javax.swing.JComboBox<String> cboKelamin;
-<<<<<<< HEAD
-=======
-    private javax.swing.JFormattedTextField jFormattedTextField1;
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -551,10 +398,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-<<<<<<< HEAD
-=======
-    private javax.swing.JLabel jLabel7;
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -567,10 +410,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdKaryawan;
     private javax.swing.JTextField txtNama;
     private javax.swing.JTextField txtNoTelp;
-<<<<<<< HEAD
     private javax.swing.JFormattedTextField txtTanggal;
-=======
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
     private javax.swing.JTextField txtTempat;
     // End of variables declaration//GEN-END:variables
 }

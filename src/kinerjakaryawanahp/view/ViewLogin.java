@@ -70,10 +70,7 @@ public class ViewLogin extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel4.setText("PASSWORD :");
 
-<<<<<<< HEAD
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/success.png"))); // NOI18N
-=======
->>>>>>> 0122a3adffa9274585614b59f50c2fe74d486971
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
