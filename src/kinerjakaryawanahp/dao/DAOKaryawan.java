@@ -6,12 +6,10 @@
 package kinerjakaryawanahp.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -49,7 +47,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
             statement.setInt(3, m.getKelamin());
             statement.setInt(4, m.getAgama());
             statement.setString(5, m.getTempat());
-            statement.setDate(6, m.getDateTglLahir());
+            statement.setDate(6, new java.sql.Date(m.getTglLahir().getTime()));
             statement.setString(7, m.getAlamat());
             statement.setString(8, m.getNoTelp());
             statement.executeUpdate();
@@ -73,7 +71,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
             statement.setInt(2, m.getKelamin());
             statement.setInt(3, m.getAgama());
             statement.setString(4, m.getTempat());
-            statement.setString(5, m.getTglLahir());
+            statement.setDate(5, new java.sql.Date(m.getTglLahir().getTime()));
             statement.setString(6, m.getAlamat());
             statement.setString(7, m.getNoTelp());
             statement.setString(8, m.getIdKaryawan());

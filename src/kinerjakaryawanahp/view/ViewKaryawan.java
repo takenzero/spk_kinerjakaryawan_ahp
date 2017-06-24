@@ -5,13 +5,16 @@
  */
 package kinerjakaryawanahp.view;
 
+<<<<<<< HEAD
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+=======
+import com.toedter.calendar.JDateChooser;
+import java.util.Date;
+>>>>>>> origin/develop
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -30,6 +33,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
             
     public ViewKaryawan() {
         initComponents();
+        jDateChooser1.setDate(new Date());
         ctr = new ControllerKaryawan(this);
         ctr.isiTable();
         setLocationRelativeTo(null);
@@ -56,12 +60,16 @@ public class ViewKaryawan extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtTempat = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+<<<<<<< HEAD
         txtTanggal = new javax.swing.JFormattedTextField();
+=======
+>>>>>>> origin/develop
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAlamat = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         txtNoTelp = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         btnTambah = new javax.swing.JButton();
         btnSimpan = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
@@ -98,9 +106,12 @@ public class ViewKaryawan extends javax.swing.JFrame {
 
         jLabel6.setText("/");
 
+<<<<<<< HEAD
         txtTanggal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyy"))));
         txtTanggal.setToolTipText("dd/MM/yyyy");
 
+=======
+>>>>>>> origin/develop
         jLabel8.setText("Alamat");
 
         txtAlamat.setColumns(20);
@@ -134,11 +145,15 @@ public class ViewKaryawan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(cboAgama, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cboKelamin, javax.swing.GroupLayout.Alignment.LEADING, 0, 138, Short.MAX_VALUE)))
+<<<<<<< HEAD
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addContainerGap(16, Short.MAX_VALUE))
+>>>>>>> origin/develop
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,19 +175,30 @@ public class ViewKaryawan extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(cboAgama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtTempat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+=======
+>>>>>>> origin/develop
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtTempat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -315,8 +341,8 @@ public class ViewKaryawan extends javax.swing.JFrame {
         return txtTempat;
     }
     
-    public JFormattedTextField getTxtTanggal(){
-        return txtTanggal;
+    public JDateChooser getDteTanggal(){
+        return jDateChooser1;
     }
     
     public JTextArea getTxtAlamat(){
@@ -372,14 +398,10 @@ public class ViewKaryawan extends javax.swing.JFrame {
     }//GEN-LAST:event_tblKaryawanMouseClicked
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-        try {
-            // TODO add your handling code here:
-            ctr.insert();
-            ctr.isiTable();
-            ctr.reset();
-        } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(this, "Proses tambah data karyawan gagal","Gagal",2);
-        }
+        // TODO add your handling code here:
+        ctr.insert();
+        ctr.isiTable();
+        ctr.reset();
     }//GEN-LAST:event_btnTambahActionPerformed
 
 
@@ -391,6 +413,10 @@ public class ViewKaryawan extends javax.swing.JFrame {
     private javax.swing.JButton btnTambah;
     private javax.swing.JComboBox<String> cboAgama;
     private javax.swing.JComboBox<String> cboKelamin;
+<<<<<<< HEAD
+=======
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+>>>>>>> origin/develop
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -410,7 +436,10 @@ public class ViewKaryawan extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdKaryawan;
     private javax.swing.JTextField txtNama;
     private javax.swing.JTextField txtNoTelp;
+<<<<<<< HEAD
     private javax.swing.JFormattedTextField txtTanggal;
+=======
+>>>>>>> origin/develop
     private javax.swing.JTextField txtTempat;
     // End of variables declaration//GEN-END:variables
 }
