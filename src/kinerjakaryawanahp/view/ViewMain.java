@@ -35,6 +35,14 @@ public class ViewMain extends javax.swing.JFrame {
         mnuClose = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         mnuDataKaryawan = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        mnuKriteria = new javax.swing.JMenuItem();
+        mnuSubKriteria = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        jMenu5 = new javax.swing.JMenu();
+        mnuBobotKaryawan = new javax.swing.JMenuItem();
+        mnuBobotKriteria = new javax.swing.JMenuItem();
+        mnuBobotSubKriteria = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
@@ -44,10 +52,20 @@ public class ViewMain extends javax.swing.JFrame {
         jMenu3.setText("Exit");
 
         mnuLogout.setText("Logout");
+        mnuLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLogoutActionPerformed(evt);
+            }
+        });
         jMenu3.add(mnuLogout);
         jMenu3.add(jSeparator1);
 
         mnuClose.setText("Close App");
+        mnuClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCloseActionPerformed(evt);
+            }
+        });
         jMenu3.add(mnuClose);
 
         jMenuBar2.add(jMenu3);
@@ -61,6 +79,32 @@ public class ViewMain extends javax.swing.JFrame {
             }
         });
         jMenu4.add(mnuDataKaryawan);
+        jMenu4.add(jSeparator2);
+
+        mnuKriteria.setText("Kritera");
+        mnuKriteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuKriteriaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mnuKriteria);
+
+        mnuSubKriteria.setText("Sub Kriteria");
+        jMenu4.add(mnuSubKriteria);
+        jMenu4.add(jSeparator3);
+
+        jMenu5.setText("Bobot");
+
+        mnuBobotKaryawan.setText("Bobot Karyawan");
+        jMenu5.add(mnuBobotKaryawan);
+
+        mnuBobotKriteria.setText("Bobot Kriteria");
+        jMenu5.add(mnuBobotKriteria);
+
+        mnuBobotSubKriteria.setText("Bobot Sub Kriteria");
+        jMenu5.add(mnuBobotSubKriteria);
+
+        jMenu4.add(jMenu5);
 
         jMenuBar2.add(jMenu4);
 
@@ -91,15 +135,39 @@ public class ViewMain extends javax.swing.JFrame {
         new ViewKaryawan().setVisible(true);
     }//GEN-LAST:event_mnuDataKaryawanActionPerformed
 
+    private void mnuLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLogoutActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new ViewLogin().setVisible(true);
+    }//GEN-LAST:event_mnuLogoutActionPerformed
+
+    private void mnuCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCloseActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_mnuCloseActionPerformed
+
+    private void mnuKriteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKriteriaActionPerformed
+        // TODO add your handling code here:
+        new ViewKriteria().setVisible(true);
+    }//GEN-LAST:event_mnuKriteriaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JMenuItem mnuBobotKaryawan;
+    private javax.swing.JMenuItem mnuBobotKriteria;
+    private javax.swing.JMenuItem mnuBobotSubKriteria;
     private javax.swing.JMenuItem mnuClose;
     private javax.swing.JMenuItem mnuDataKaryawan;
+    private javax.swing.JMenuItem mnuKriteria;
     private javax.swing.JMenuItem mnuLogout;
+    private javax.swing.JMenuItem mnuSubKriteria;
     // End of variables declaration//GEN-END:variables
 }

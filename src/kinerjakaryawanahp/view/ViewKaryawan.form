@@ -247,17 +247,8 @@
             <Property name="text" type="java.lang.String" value="/"/>
           </Properties>
         </Component>
-<<<<<<< HEAD
-        <Component class="javax.swing.JFormattedTextField" name="txtTanggal">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="dd/MM/yyy" subtype="-1" type="1"/>
-            </Property>
-            <Property name="toolTipText" type="java.lang.String" value="dd/MM/yyyy"/>
-          </Properties>
+        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
         </Component>
-=======
->>>>>>> origin/develop
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="text" type="java.lang.String" value="Alamat"/>
@@ -284,8 +275,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNoTelp">
-        </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
         </Component>
       </SubComponents>
     </Container>

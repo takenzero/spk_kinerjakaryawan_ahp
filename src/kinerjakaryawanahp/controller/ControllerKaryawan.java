@@ -72,7 +72,7 @@ public class ControllerKaryawan {
             if (in.insert(mk)){
                 JOptionPane.showMessageDialog(frm, "Data karyawan berhasil ditambahkan","Info",1);
             }else{
-                JOptionPane.showMessageDialog(frm, "Data karyawan gagal ditambahkan. Perisa kembali data yang diinput.","Info",0);
+                JOptionPane.showMessageDialog(frm, "Data karyawan gagal ditambahkan. Periksa kembali data yang diinput.","Info",0);
             }
         }else{
             JOptionPane.showMessageDialog(frm, "Id Karyawan dan Nama harus diisi","Info",2);
