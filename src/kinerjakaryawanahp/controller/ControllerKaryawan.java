@@ -9,9 +9,7 @@ package kinerjakaryawanahp.controller;
  *
  * @author taken
  */
-import java.sql.SQLException;
 import java.util.Date;
-import java.text.ParseException;
 import kinerjakaryawanahp.dao.DAOKaryawan;
 import kinerjakaryawanahp.dao.InterfaceKaryawan;
 import kinerjakaryawanahp.model.ModelKaryawan;
@@ -71,10 +69,59 @@ public class ControllerKaryawan {
             mk.setTglLahir(frm.getDteTanggal().getDate());
             mk.setAlamat(frm.getTxtAlamat().getText().trim());
             mk.setNoTelp(frm.getTxtNoTelp().getText().trim());
-            in.insert(mk);
+            if (in.insert(mk)){
+                JOptionPane.showMessageDialog(frm, "Data karyawan berhasil ditambahkan","Info",1);
+            }else{
+                JOptionPane.showMessageDialog(frm, "Data karyawan gagal ditambahkan. Perisa kembali data yang diinput.","Info",0);
+            }
         }else{
             JOptionPane.showMessageDialog(frm, "Id Karyawan dan Nama harus diisi","Info",2);
         }
     }
     
+    public void update(){
+        ModelKaryawan mk = new ModelKaryawan();
+        
+        if (!frm.getTxtIdKaryawan().getText().trim().isEmpty() && !frm.getTxtNama().getText().trim().isEmpty()){
+            mk.setIdKaryawan(frm.getTxtIdKaryawan().getText().trim());
+            mk.setNama(frm.getTxtNama().getText().trim());
+            mk.setKelamin(frm.getCboKelamin().getSelectedIndex()+1);
+            mk.setAgama(frm.getCboAgama().getSelectedIndex()+1);
+            mk.setTempat(frm.getTxtTempat().getText().trim());
+            mk.setTglLahir(frm.getDteTanggal().getDate());
+            mk.setAlamat(frm.getTxtAlamat().getText().trim());
+            mk.setNoTelp(frm.getTxtNoTelp().getText().trim());
+            if (in.update(mk)){
+                JOptionPane.showMessageDialog(frm, "Perubahan data karyawan berhasil disimpan","Info",1);
+            }else{
+                JOptionPane.showMessageDialog(frm, "Perubahan data karyawan gagal disimpan","Info",0);
+            }
+        }else{
+            JOptionPane.showMessageDialog(frm, "Id Karyawan dan Nama harus diisi","Info",2);
+        }
+    }
+    
+    public void delete(){
+        if (!frm.getTxtIdKaryawan().getText().trim().isEmpty()){
+            if (in.delete(frm.getTxtIdKaryawan().getText().trim())){
+                JOptionPane.showMessageDialog(frm, "Data karyawan berhasil dihapus.","Info",1);
+            }else{
+                JOptionPane.showMessageDialog(frm, "Data karyawan gagal dihapus","Info",0);
+            }
+        }else{
+            JOptionPane.showMessageDialog(frm, "Id Karyawan harus diisi","Info",2);
+        }
+    }
+    
+    public void cari(){
+        if (!frm.getTxtCari().getText().trim().isEmpty()){
+            list = in.getCariKaryawan(frm.getTxtCari().getText().trim());
+            ModelTabelKaryawan mtk = new ModelTabelKaryawan(list);
+            frm.getTblKaryawan().setModel(mtk);
+        }else{
+            list = in.getAllKaryawan();
+            ModelTabelKaryawan mtk = new ModelTabelKaryawan(list);
+            frm.getTblKaryawan().setModel(mtk);
+        }
+    }
 }
