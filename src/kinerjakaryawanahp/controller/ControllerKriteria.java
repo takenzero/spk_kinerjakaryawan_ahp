@@ -23,6 +23,7 @@ public class ControllerKriteria {
     
     public ControllerKriteria(ViewKriteria frm){
         this.frm = frm;
+        reset();
         in = new DAOKriteria();
         list = in.getAllKriteria();
     }
@@ -30,6 +31,9 @@ public class ControllerKriteria {
     public void reset(){
         frm.getTxtIdKriteria().setText("");
         frm.getTxtNamaKriteria().setText("");
+        frm.getBtnTambah().setEnabled(true);
+        frm.getBtnSimpan().setEnabled(false);
+        frm.getBtnHapus().setEnabled(false);
     }
     
     public void isiTable(){
@@ -41,6 +45,9 @@ public class ControllerKriteria {
     public void isiField(int row){
         frm.getTxtIdKriteria().setText(list.get(row).getIdKriteria().toString());
         frm.getTxtNamaKriteria().setText(list.get(row).getNamaKriteria());
+        frm.getBtnTambah().setEnabled(false);
+        frm.getBtnSimpan().setEnabled(true);
+        frm.getBtnHapus().setEnabled(true);
     }
     
     public void insert(){

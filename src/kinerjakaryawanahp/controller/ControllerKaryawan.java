@@ -25,6 +25,7 @@ public class ControllerKaryawan {
     
     public ControllerKaryawan(ViewKaryawan frm){
         this.frm = frm;
+        reset();
         in = new DAOKaryawan();
         list = in.getAllKaryawan();
     }
@@ -38,6 +39,9 @@ public class ControllerKaryawan {
         frm.getDteTanggal().setDate(new Date());
         frm.getTxtAlamat().setText("");
         frm.getTxtNoTelp().setText("");
+        frm.getBtnTambah().setEnabled(true);
+        frm.getBtnSimpan().setEnabled(false);
+        frm.getBtnHapus().setEnabled(false);
     }
     
     public void isiTable(){
@@ -55,6 +59,9 @@ public class ControllerKaryawan {
         frm.getDteTanggal().setDate(list.get(row).getTglLahir());
         frm.getTxtAlamat().setText(list.get(row).getAlamat());
         frm.getTxtNoTelp().setText(list.get(row).getNoTelp());
+        frm.getBtnTambah().setEnabled(false);
+        frm.getBtnSimpan().setEnabled(true);
+        frm.getBtnHapus().setEnabled(true);
     }
     
     public void insert(){
