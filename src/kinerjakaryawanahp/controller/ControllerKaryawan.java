@@ -9,9 +9,9 @@ package kinerjakaryawanahp.controller;
  *
  * @author taken
  */
-import java.sql.Date;
+import java.sql.SQLException;
+import java.util.Date;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import kinerjakaryawanahp.dao.DAOKaryawan;
 import kinerjakaryawanahp.dao.InterfaceKaryawan;
 import kinerjakaryawanahp.model.ModelKaryawan;
@@ -37,7 +37,7 @@ public class ControllerKaryawan {
         frm.getCboKelamin().setSelectedIndex(0);
         frm.getCboAgama().setSelectedIndex(0);
         frm.getTxtTempat().setText("");
-        frm.getTxtTanggal().setText("");
+        frm.getDteTanggal().setDate(new Date());
         frm.getTxtAlamat().setText("");
         frm.getTxtNoTelp().setText("");
     }
@@ -54,23 +54,24 @@ public class ControllerKaryawan {
         frm.getCboKelamin().setSelectedItem(list.get(row).getStrKelamin());
         frm.getCboAgama().setSelectedItem(list.get(row).getStrAgama());
         frm.getTxtTempat().setText(list.get(row).getTempat());
-        frm.getTxtTanggal().setText(list.get(row).getTglLahir());
+        frm.getDteTanggal().setDate(list.get(row).getTglLahir());
         frm.getTxtAlamat().setText(list.get(row).getAlamat());
         frm.getTxtNoTelp().setText(list.get(row).getNoTelp());
     }
     
-    public void insert() throws ParseException{
+    public void insert(){
         ModelKaryawan mk = new ModelKaryawan();
         
         if (!frm.getTxtIdKaryawan().getText().trim().isEmpty() && !frm.getTxtNama().getText().trim().isEmpty()){
             mk.setIdKaryawan(frm.getTxtIdKaryawan().getText().trim());
             mk.setNama(frm.getTxtNama().getText().trim());
-            mk.setKelamin(frm.getCboKelamin().getSelectedIndex());
-            mk.setAgama(frm.getCboAgama().getSelectedIndex());
+            mk.setKelamin(frm.getCboKelamin().getSelectedIndex()+1);
+            mk.setAgama(frm.getCboAgama().getSelectedIndex()+1);
             mk.setTempat(frm.getTxtTempat().getText().trim());
-            mk.setTglLahir((Date) new SimpleDateFormat("dd/MM/yyyy").parse(frm.getTxtTanggal().getText()));
+            mk.setTglLahir(frm.getDteTanggal().getDate());
             mk.setAlamat(frm.getTxtAlamat().getText().trim());
             mk.setNoTelp(frm.getTxtNoTelp().getText().trim());
+            in.insert(mk);
         }else{
             JOptionPane.showMessageDialog(frm, "Id Karyawan dan Nama harus diisi","Info",2);
         }

@@ -5,8 +5,7 @@
  */
 package kinerjakaryawanahp.model;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -27,7 +26,6 @@ public class ModelKaryawan {
    private String str_agama;
    private final String[] arr_kelamin = {"Laki-Laki","Perempuan"};
    private final String[] arr_agama = {"Islam","Katolik","Protestan","Hindu","Budha","Lain"};
-   private final SimpleDateFormat format_tgl = new SimpleDateFormat("dd/MM/yyyy");
    
    public void setIdKaryawan(String id_karyawan){
        this.id_karyawan = id_karyawan;
@@ -73,11 +71,7 @@ public class ModelKaryawan {
        this.tgl_lahir = tgl_lahir;
    }
    
-   public String getTglLahir(){
-       return format_tgl.format(tgl_lahir);
-   }
-   
-   public Date getDateTglLahir(){
+   public Date getTglLahir(){
        return tgl_lahir;
    }
    
