@@ -38,7 +38,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
     }
     
     @Override
-    public void insert(ModelKaryawan m){
+    public Boolean insert(ModelKaryawan m){
         PreparedStatement statement = null;
         try{
             statement = connection.prepareStatement(insert);
@@ -51,6 +51,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
             statement.setString(7, m.getAlamat());
             statement.setString(8, m.getNoTelp());
             statement.executeUpdate();
+            return true;
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
@@ -60,10 +61,11 @@ public class DAOKaryawan implements InterfaceKaryawan{
                 ex.printStackTrace();
             }
         }
+        return false;
     }
     
     @Override
-    public void update(ModelKaryawan m){
+    public Boolean update(ModelKaryawan m){
         PreparedStatement statement = null;
         try{
             statement = connection.prepareStatement(update);
@@ -76,6 +78,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
             statement.setString(7, m.getNoTelp());
             statement.setString(8, m.getIdKaryawan());
             statement.executeUpdate();
+            return true;
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
@@ -85,15 +88,17 @@ public class DAOKaryawan implements InterfaceKaryawan{
                 ex.printStackTrace();
             }
         }
+        return false;
     }
     
     @Override
-    public void delete(String id){
+    public Boolean delete(String id){
         PreparedStatement statement = null;
         try{
             statement = connection.prepareStatement(delete);
             statement.setString(1, id);
             statement.executeUpdate();
+            return true;
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
@@ -103,6 +108,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
                 ex.printStackTrace();
             }
         }
+        return false;
     }
     
     @Override
@@ -137,8 +143,8 @@ public class DAOKaryawan implements InterfaceKaryawan{
         List<ModelKaryawan> list = null;
         try {
             list = new ArrayList<ModelKaryawan>();
-            PreparedStatement st = connection.prepareStatement(cari);
-            st.setString(1, "%"+cari+"%");
+            PreparedStatement st = connection.prepareStatement(search);
+            st.setString(1, "%" + cari + "%");
             st.setString(2, cari);
             ResultSet rs = st.executeQuery();
             while (rs.next()){
