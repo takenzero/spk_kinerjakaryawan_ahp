@@ -7,7 +7,6 @@ package kinerjakaryawanahp.view;
 
 import com.toedter.calendar.JDateChooser;
 import java.util.Date;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -54,12 +53,12 @@ public class ViewKaryawan extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtTempat = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAlamat = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         txtNoTelp = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         btnTambah = new javax.swing.JButton();
         btnSimpan = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
@@ -337,7 +336,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
     public JTextField getTxtCari(){
         return txtCari;
     }
-    
+    /*
     public JButton getBtnTambah(){
         return btnTambah;
     }
@@ -357,7 +356,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
     public JButton getBtnCari(){
         return btnCari;
     }
-    
+    */
     public JTable getTblKaryawan(){
         return tblKaryawan;
     }
