@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 =======
 import com.toedter.calendar.JDateChooser;
 import java.util.Date;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -360,7 +361,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
     public JTextField getTxtCari(){
         return txtCari;
     }
-    /*
+    
     public JButton getBtnTambah(){
         return btnTambah;
     }
@@ -380,7 +381,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
     public JButton getBtnCari(){
         return btnCari;
     }
-    */
+    
     public JTable getTblKaryawan(){
         return tblKaryawan;
     }

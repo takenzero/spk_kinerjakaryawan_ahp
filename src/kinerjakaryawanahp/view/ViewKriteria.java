@@ -5,6 +5,7 @@
  */
 package kinerjakaryawanahp.view;
 
+import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import kinerjakaryawanahp.controller.ControllerKriteria;
@@ -45,6 +46,7 @@ public class ViewKriteria extends javax.swing.JFrame {
         btnTambah = new javax.swing.JButton();
         btnSimpan = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblKriteria = new javax.swing.JTable();
 
@@ -89,6 +91,14 @@ public class ViewKriteria extends javax.swing.JFrame {
             }
         });
 
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/repeat-1.png"))); // NOI18N
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -109,12 +119,15 @@ public class ViewKriteria extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtNamaKriteria)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(46, 46, 46)
                         .addComponent(btnTambah)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSimpan)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnHapus)))
+                        .addComponent(btnHapus)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnReset)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -133,7 +146,8 @@ public class ViewKriteria extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTambah)
                     .addComponent(btnSimpan)
-                    .addComponent(btnHapus))
+                    .addComponent(btnHapus)
+                    .addComponent(btnReset))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -206,6 +220,11 @@ public class ViewKriteria extends javax.swing.JFrame {
         ctr.reset();
     }//GEN-LAST:event_btnHapusActionPerformed
 
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        ctr.reset();
+    }//GEN-LAST:event_btnResetActionPerformed
+
     public JTextField getTxtIdKriteria(){
         return txtIdKriteria;
     }
@@ -214,12 +233,29 @@ public class ViewKriteria extends javax.swing.JFrame {
         return txtNamaKriteria;
     }
     
+    public JButton getBtnTambah(){
+        return btnTambah;
+    }
+    
+    public JButton getBtnSimpan(){
+        return btnSimpan;
+    }
+    
+    public JButton getBtnHapus(){
+        return btnHapus;
+    }
+    
+    public JButton getBtnReset(){
+        return btnReset;
+    }
+    
     public JTable getTblKriteria(){
         return tblKriteria;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnTambah;
     private javax.swing.JLabel jLabel1;
