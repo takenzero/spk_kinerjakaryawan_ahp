@@ -13,6 +13,15 @@ public class ModelKriteria {
     private Integer id_kriteria;
     private String nama_kriteria;
     
+    public ModelKriteria(){
+        //Do Nothing
+    }
+    
+    public ModelKriteria(int id_kriteria, String nama_kriteria){
+        this.id_kriteria = id_kriteria;
+        this.nama_kriteria = nama_kriteria;
+    }
+    
     public void setIdKriteria(int id_kriteria){
         this.id_kriteria = id_kriteria;
     }
