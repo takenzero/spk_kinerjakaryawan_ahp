@@ -10,12 +10,12 @@ package kinerjakaryawanahp.dao;
  * @author taken
  */
 import java.util.List;
-import kinerjakaryawanahp.model.ModelKriteria;
+import kinerjakaryawanahp.model.ModelSubKriteria;
 
-public interface InterfaceKriteria {
-    public Boolean insert(ModelKriteria m);
-    public Boolean update(ModelKriteria m);
+public interface InterfaceSubKriteria {
+    public Boolean insert(ModelSubKriteria m);
+    public Boolean update(ModelSubKriteria m);
     public Boolean delete(int id_kriteria);
-    public List<ModelKriteria> getAllKriteria();
-    public ModelKriteria getKriteriaBaseOnID(int id_kriteria);
+    public List<ModelSubKriteria> getAllSubKriteria();
+    public ModelSubKriteria getSubKriteriaBaseOnID(int id_subkriteria);
 }

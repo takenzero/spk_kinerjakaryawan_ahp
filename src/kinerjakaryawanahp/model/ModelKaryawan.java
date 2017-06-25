@@ -24,8 +24,8 @@ public class ModelKaryawan {
    private String cari;
    private String str_kelamin;
    private String str_agama;
-   private final String[] arr_kelamin = {"Laki-Laki","Perempuan"};
-   private final String[] arr_agama = {"Islam","Katolik","Protestan","Hindu","Budha","Lain"};
+   private final String[] ARR_KELAMIN = {"Laki-Laki","Perempuan"};
+   private final String[] ARR_AGAMA = {"Islam","Katolik","Protestan","Hindu","Budha","Lain"};
    
    public void setIdKaryawan(String id_karyawan){
        this.id_karyawan = id_karyawan;
@@ -100,7 +100,7 @@ public class ModelKaryawan {
    }
    
    public void setStrKelamin(Integer kelamin){
-       this.str_kelamin = arr_kelamin[kelamin-1];
+       this.str_kelamin = ARR_KELAMIN[kelamin-1];
    }
    
    public String getStrKelamin(){
@@ -108,7 +108,7 @@ public class ModelKaryawan {
    }
    
    public void setStrAgama(Integer agama){
-       this.str_agama = arr_agama[agama-1];
+       this.str_agama = ARR_AGAMA[agama-1];
    }
    
    public String getStrAgama(){

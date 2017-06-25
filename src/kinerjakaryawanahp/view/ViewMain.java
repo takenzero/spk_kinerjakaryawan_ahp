@@ -90,6 +90,11 @@ public class ViewMain extends javax.swing.JFrame {
         jMenu4.add(mnuKriteria);
 
         mnuSubKriteria.setText("Sub Kriteria");
+        mnuSubKriteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSubKriteriaActionPerformed(evt);
+            }
+        });
         jMenu4.add(mnuSubKriteria);
         jMenu4.add(jSeparator3);
 
@@ -150,6 +155,11 @@ public class ViewMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         new ViewKriteria().setVisible(true);
     }//GEN-LAST:event_mnuKriteriaActionPerformed
+
+    private void mnuSubKriteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSubKriteriaActionPerformed
+        // TODO add your handling code here:
+        new ViewSubKriteria().setVisible(true);
+    }//GEN-LAST:event_mnuSubKriteriaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;

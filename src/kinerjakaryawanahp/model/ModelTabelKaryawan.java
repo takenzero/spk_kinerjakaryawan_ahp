@@ -13,7 +13,8 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 public class ModelTabelKaryawan extends AbstractTableModel{
-    final String[] nama_kolom = {"ID Karyawan","Nama","Kelamin","Agama","Tempat","Tgl Lahir","Alamat","No Telp"};
+    private final String[] COLUMN_NAME = {"ID Karyawan","Nama","Kelamin","Agama","Tempat","Tgl Lahir","Alamat","No Telp"};
+    private final Integer COLUMN_COUNT = 8;
     List<ModelKaryawan> list;
     
     public ModelTabelKaryawan(List<ModelKaryawan> list){
@@ -22,7 +23,7 @@ public class ModelTabelKaryawan extends AbstractTableModel{
     
     @Override
     public int getColumnCount(){
-        return 8;
+        return COLUMN_COUNT;
     }
     
     @Override
@@ -32,7 +33,7 @@ public class ModelTabelKaryawan extends AbstractTableModel{
     
     @Override
     public String getColumnName(int column){
-        return nama_kolom[column];
+        return COLUMN_NAME[column];
     }
     
     @Override

@@ -26,6 +26,7 @@ public class DAOKriteria implements InterfaceKriteria{
     final String update = "UPDATE tbl_kriteria SET nama_kriteria=? WHERE id_kriteria=?";
     final String delete = "DELETE FROM tbl_kriteria WHERE id_kriteria=?";
     final String select = "SELECT * from tbl_kriteria";
+    final String select_id = "SELECT * tbl_kriteria WHERE id_kriteria=?";
     
     public DAOKriteria(){
         try {
@@ -95,5 +96,22 @@ public class DAOKriteria implements InterfaceKriteria{
             Logger.getLogger(DAOKaryawan.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
+    }
+
+    @Override
+    public ModelKriteria getKriteriaBaseOnID(int id_kriteria) {
+        ModelKriteria mk = new ModelKriteria();
+        try{
+            PreparedStatement st = connection.prepareStatement(select_id);
+            st.setInt(1, id_kriteria);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                mk.setIdKriteria(rs.getInt("id_kriteria"));
+                mk.setNamaKriteria(rs.getString("nama_kriteria"));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        return mk;
     }
 }
