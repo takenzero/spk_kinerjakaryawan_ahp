@@ -40,9 +40,9 @@ public class ViewMain extends javax.swing.JFrame {
         mnuSubKriteria = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu5 = new javax.swing.JMenu();
-        mnuBobotKaryawan = new javax.swing.JMenuItem();
         mnuBobotKriteria = new javax.swing.JMenuItem();
         mnuBobotSubKriteria = new javax.swing.JMenuItem();
+        mnuBobotKaryawan = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
@@ -100,14 +100,19 @@ public class ViewMain extends javax.swing.JFrame {
 
         jMenu5.setText("Bobot");
 
-        mnuBobotKaryawan.setText("Bobot Karyawan");
-        jMenu5.add(mnuBobotKaryawan);
-
         mnuBobotKriteria.setText("Bobot Kriteria");
+        mnuBobotKriteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuBobotKriteriaActionPerformed(evt);
+            }
+        });
         jMenu5.add(mnuBobotKriteria);
 
         mnuBobotSubKriteria.setText("Bobot Sub Kriteria");
         jMenu5.add(mnuBobotSubKriteria);
+
+        mnuBobotKaryawan.setText("Bobot Karyawan");
+        jMenu5.add(mnuBobotKaryawan);
 
         jMenu4.add(jMenu5);
 
@@ -160,6 +165,11 @@ public class ViewMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         new ViewSubKriteria().setVisible(true);
     }//GEN-LAST:event_mnuSubKriteriaActionPerformed
+
+    private void mnuBobotKriteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBobotKriteriaActionPerformed
+        // TODO add your handling code here:
+        new ViewBobotKriteria().setVisible(true);
+    }//GEN-LAST:event_mnuBobotKriteriaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;

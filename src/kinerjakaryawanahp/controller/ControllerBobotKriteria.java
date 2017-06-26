@@ -6,28 +6,35 @@
 package kinerjakaryawanahp.controller;
 
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import kinerjakaryawanahp.dao.DAOKriteria;
 import kinerjakaryawanahp.dao.InterfaceKriteria;
 import kinerjakaryawanahp.model.ModelKriteria;
-import kinerjakaryawanahp.model.ModelTabelKriteria;
-import kinerjakaryawanahp.view.ViewKriteria;
+import kinerjakaryawanahp.view.ViewBobotKriteria;
 /**
  *
  * @author taken
  */
-public class ControllerKriteria {
-    ViewKriteria frm;
+public class ControllerBobotKriteria {
+    ViewBobotKriteria frm;
     InterfaceKriteria in;
     List<ModelKriteria> list;
     
-    public ControllerKriteria(ViewKriteria frm){
+    public ControllerBobotKriteria(ViewBobotKriteria frm){
         this.frm = frm;
-        reset();
+        //reset();
         in = new DAOKriteria();
         list = in.getAllKriteria();
+        setKriteria();
     }
     
+    private void setKriteria(){
+        frm.getCboKriteria1().setModel(new DefaultComboBoxModel(list.toArray()));
+        frm.getCboKriteria2().setModel(new DefaultComboBoxModel(list.toArray()));
+    }
+    
+    /*
     public void reset(){
         frm.getTxtIdKriteria().setText("");
         frm.getTxtNamaKriteria().setText("");
@@ -88,4 +95,5 @@ public class ControllerKriteria {
             JOptionPane.showMessageDialog(frm, "Data kriteria gagal dihapus","Info",0);
         }
     }
+*/
 }
