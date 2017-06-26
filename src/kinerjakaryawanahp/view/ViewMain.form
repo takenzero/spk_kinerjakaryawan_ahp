@@ -67,19 +67,22 @@
                 <Property name="text" type="java.lang.String" value="Bobot"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="mnuBobotKaryawan">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Bobot Karyawan"/>
-                  </Properties>
-                </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="mnuBobotKriteria">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Bobot Kriteria"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuBobotKriteriaActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="mnuBobotSubKriteria">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Bobot Sub Kriteria"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="mnuBobotKaryawan">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Bobot Karyawan"/>
                   </Properties>
                 </MenuItem>
               </SubComponents>

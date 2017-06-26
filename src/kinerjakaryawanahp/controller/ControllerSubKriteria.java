@@ -34,14 +34,14 @@ public class ControllerSubKriteria {
         in = new DAOSubKriteria();
         list = in.getAllSubKriteria();
         setKriteria(list_kriteria);
-        reset();
+        this.reset();
     }
     
     private void setKriteria(List<ModelKriteria> list_kriteria){
         frm.getCboKriteria().setModel(new DefaultComboBoxModel(list_kriteria.toArray()));
     }
     
-    public void reset(){
+    public final void reset(){
         frm.getTxtIdSubKriteria().setText("");
         frm.getTxtNamaSubKriteria().setText("");
         frm.getCboKriteria().setSelectedIndex(0);
