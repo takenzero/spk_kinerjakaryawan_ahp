@@ -3,28 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelTabelSubKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerSubKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelTabelKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/DAOSubKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/InterfaceSubKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelSubKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/koneksi/KoneksiMySQL.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/InterfaceKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/main/Main.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewMain.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewSubKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/DAOKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/DAOKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewLogin.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelTabelKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelKriteria.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/InterfaceKaryawan.java</file>
+            <file>file:/C:/Users/TAKEN%20ZERO/Documents/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewSubKriteria.java</file>
+            <file>file:/C:/Users/TAKEN%20ZERO/Documents/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewKriteria.java</file>
+            <file>file:/C:/Users/TAKEN%20ZERO/Documents/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/DAOKaryawan.java</file>
+            <file>file:/C:/Users/TAKEN%20ZERO/Documents/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewKaryawan.java</file>
+            <file>file:/C:/Users/TAKEN%20ZERO/Documents/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewBobotKriteria.java</file>
+            <file>file:/C:/Users/TAKEN%20ZERO/Documents/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerKaryawan.java</file>
+            <file>file:/C:/Users/TAKEN%20ZERO/Documents/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/InterfaceSubKriteria.java</file>
         </group>
     </open-files>
 </project-private>
