@@ -39,6 +39,7 @@ public class ControllerKaryawan {
         frm.getDteTanggal().setDate(new Date());
         frm.getTxtAlamat().setText("");
         frm.getTxtNoTelp().setText("");
+        frm.getTxtIdKaryawan().setEnabled(true);
         frm.getBtnTambah().setEnabled(true);
         frm.getBtnSimpan().setEnabled(false);
         frm.getBtnHapus().setEnabled(false);
@@ -59,6 +60,7 @@ public class ControllerKaryawan {
         frm.getDteTanggal().setDate(list.get(row).getTglLahir());
         frm.getTxtAlamat().setText(list.get(row).getAlamat());
         frm.getTxtNoTelp().setText(list.get(row).getNoTelp());
+        frm.getTxtIdKaryawan().setEnabled(false);
         frm.getBtnTambah().setEnabled(false);
         frm.getBtnSimpan().setEnabled(true);
         frm.getBtnHapus().setEnabled(true);

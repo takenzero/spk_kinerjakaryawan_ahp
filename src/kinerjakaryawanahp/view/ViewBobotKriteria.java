@@ -50,6 +50,7 @@ public class ViewBobotKriteria extends javax.swing.JFrame {
         tblBobotKriteria = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle(".:: Bobot Kriteria ::.");
         setAlwaysOnTop(true);
         setResizable(false);
 
