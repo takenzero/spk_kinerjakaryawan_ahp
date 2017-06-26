@@ -85,13 +85,13 @@ public class DAOSubKriteria implements InterfaceSubKriteria{
     @Override
     public List<ModelSubKriteria> getAllSubKriteria(){
         List<ModelSubKriteria> list = null;
-        ModelKriteria kriteria = new ModelKriteria();
         try{
             list = new ArrayList<ModelSubKriteria>();
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(select);
             while(rs.next()){
                 ModelSubKriteria mk = new ModelSubKriteria();
+                ModelKriteria kriteria = new ModelKriteria();
                 mk.setIdSubKriteria(rs.getInt("id_subkriteria"));
                 mk.setNamaSubKriteria(rs.getString("nama_subkriteria"));
                 kriteria.setIdKriteria(rs.getInt("id_kriteria"));
