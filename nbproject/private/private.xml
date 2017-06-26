@@ -18,9 +18,11 @@
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewMain.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewSubKriteria.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/DAOKriteria.java</file>
+            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerKriteria.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/DAOKaryawan.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewLogin.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewKriteria.java</file>
+            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelTabelKriteria.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelKriteria.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/InterfaceKaryawan.java</file>
         </group>

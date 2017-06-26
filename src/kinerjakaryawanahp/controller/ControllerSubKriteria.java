@@ -38,8 +38,7 @@ public class ControllerSubKriteria {
     }
     
     private void setKriteria(List<ModelKriteria> list_kriteria){
-        JOptionPane.showMessageDialog(frm, list_kriteria.toString(),"Info",2);
-        //frm.getCboKriteria().setModel(new DefaultComboBoxModel(list_kriteria.toArray()));
+        frm.getCboKriteria().setModel(new DefaultComboBoxModel(list_kriteria.toArray()));
     }
     
     public void reset(){
@@ -60,7 +59,7 @@ public class ControllerSubKriteria {
     public void isiField(int row){
         frm.getTxtIdSubKriteria().setText(list.get(row).getIdSubKriteria().toString());
         frm.getTxtNamaSubKriteria().setText(list.get(row).getNamaSubKriteria());
-        frm.getCboKriteria().setSelectedItem(list.get(row).getKriteria().getNamaKriteria());
+        setSelectedKriteria(list.get(row).getKriteria().getNamaKriteria());
         frm.getBtnTambah().setEnabled(false);
         frm.getBtnSimpan().setEnabled(true);
         frm.getBtnHapus().setEnabled(true);
@@ -106,4 +105,16 @@ public class ControllerSubKriteria {
             JOptionPane.showMessageDialog(frm, "Data subkriteria gagal dihapus","Info",0);
         }
     }
+    
+    private void setSelectedKriteria(String value){
+        String item;
+        for(int i=0; i<frm.getCboKriteria().getItemCount();i++){
+            item = frm.getCboKriteria().getItemAt(i).toString();
+            if (item.equals(value)){
+                frm.getCboKriteria().setSelectedIndex(i);
+                break;
+            }
+        }
+    }
+
 }
