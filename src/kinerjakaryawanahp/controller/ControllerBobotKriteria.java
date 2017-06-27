@@ -8,9 +8,13 @@ package kinerjakaryawanahp.controller;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import kinerjakaryawanahp.dao.DAOBobotKriteria;
 import kinerjakaryawanahp.dao.DAOKriteria;
+import kinerjakaryawanahp.dao.InterfaceBobotKriteria;
 import kinerjakaryawanahp.dao.InterfaceKriteria;
+import kinerjakaryawanahp.model.ModelBobotKriteria;
 import kinerjakaryawanahp.model.ModelKriteria;
+import kinerjakaryawanahp.model.ModelTabelBobotKriteria;
 import kinerjakaryawanahp.view.ViewBobotKriteria;
 /**
  *
@@ -19,14 +23,17 @@ import kinerjakaryawanahp.view.ViewBobotKriteria;
 public class ControllerBobotKriteria {
     ViewBobotKriteria frm;
     InterfaceKriteria in;
+    InterfaceBobotKriteria in_bobot;
     List<ModelKriteria> list;
+    List<ModelBobotKriteria> list_bobot;
     
     public ControllerBobotKriteria(ViewBobotKriteria frm){
         this.frm = frm;
-        //reset();
         in = new DAOKriteria();
+        in_bobot = new DAOBobotKriteria();
         list = in.getAllKriteria();
-        setKriteria();
+        list_bobot = in_bobot.getAllBobotKriteria();
+        reset();
     }
     
     private void setKriteria(){
@@ -34,21 +41,22 @@ public class ControllerBobotKriteria {
         frm.getCboKriteria2().setModel(new DefaultComboBoxModel(list.toArray()));
     }
     
-    /*
+    
     public void reset(){
-        frm.getTxtIdKriteria().setText("");
-        frm.getTxtNamaKriteria().setText("");
+        //list = in.getAllKriteria();
+        setKriteria();
+        frm.getCboBobotKriteria().setSelectedIndex(0);
         frm.getBtnTambah().setEnabled(true);
         frm.getBtnSimpan().setEnabled(false);
         frm.getBtnHapus().setEnabled(false);
     }
     
     public void isiTable(){
-        list = in.getAllKriteria();
-        ModelTabelKriteria mtk = new ModelTabelKriteria(list);
-        frm.getTblKriteria().setModel(mtk);
+        list_bobot = in_bobot.getAllBobotKriteria();
+        ModelTabelBobotKriteria mtk = new ModelTabelBobotKriteria(list_bobot);
+        frm.getTblBobotKriteria().setModel(mtk);
     }
-    
+    /*
     public void isiField(int row){
         frm.getTxtIdKriteria().setText(list.get(row).getIdKriteria().toString());
         frm.getTxtNamaKriteria().setText(list.get(row).getNamaKriteria());
