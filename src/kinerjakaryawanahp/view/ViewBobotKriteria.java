@@ -24,6 +24,7 @@ public class ViewBobotKriteria extends javax.swing.JFrame {
     public ViewBobotKriteria() {
         initComponents();
         ctr = new ControllerBobotKriteria(this);
+        ctr.isiTable();
         setLocationRelativeTo(null);
     }
 
@@ -110,15 +111,16 @@ public class ViewBobotKriteria extends javax.swing.JFrame {
 
         tblBobotKriteria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3"
             }
         ));
+        tblBobotKriteria.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
         tblBobotKriteria.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblBobotKriteria);
 
@@ -178,6 +180,10 @@ public class ViewBobotKriteria extends javax.swing.JFrame {
     
     public JButton getBtnSimpan(){
         return btnSimpan;
+    }
+    
+    public JButton getBtnHapus(){
+        return btnHapus;
     }
     
     public JButton getBtnReset(){
