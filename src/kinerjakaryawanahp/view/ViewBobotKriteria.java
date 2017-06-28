@@ -7,6 +7,7 @@ package kinerjakaryawanahp.view;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import kinerjakaryawanahp.controller.ControllerBobotKriteria;
 
@@ -58,10 +59,20 @@ public class ViewBobotKriteria extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("[ Input Bobot Kriteria : ]"));
 
         cboKriteria1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboKriteria1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboKriteria1ItemStateChanged(evt);
+            }
+        });
 
         jLabel1.setText("dibandingkan");
 
         cboKriteria2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboKriteria2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboKriteria2ItemStateChanged(evt);
+            }
+        });
 
         jLabel2.setText("=");
 
@@ -99,15 +110,35 @@ public class ViewBobotKriteria extends javax.swing.JFrame {
 
         btnTambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/plus.png"))); // NOI18N
         btnTambah.setText("Tambah");
+        btnTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahActionPerformed(evt);
+            }
+        });
 
         btnSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/save.png"))); // NOI18N
         btnSimpan.setText("Simpan");
+        btnSimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimpanActionPerformed(evt);
+            }
+        });
 
         btnHapus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/garbage-1.png"))); // NOI18N
         btnHapus.setText("Hapus");
+        btnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusActionPerformed(evt);
+            }
+        });
 
         btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/repeat-1.png"))); // NOI18N
         btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
 
         tblBobotKriteria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,6 +153,11 @@ public class ViewBobotKriteria extends javax.swing.JFrame {
         ));
         tblBobotKriteria.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
         tblBobotKriteria.getTableHeader().setReorderingAllowed(false);
+        tblBobotKriteria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBobotKriteriaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblBobotKriteria);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,6 +197,47 @@ public class ViewBobotKriteria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tblBobotKriteriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBobotKriteriaMouseClicked
+        // TODO add your handling code here:
+        ctr.isiField(tblBobotKriteria.getSelectedRow());
+    }//GEN-LAST:event_tblBobotKriteriaMouseClicked
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        ctr.reset();
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void cboKriteria1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboKriteria1ItemStateChanged
+        // TODO add your handling code here:
+        ctr.setEnabledBobot();
+    }//GEN-LAST:event_cboKriteria1ItemStateChanged
+
+    private void cboKriteria2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboKriteria2ItemStateChanged
+        // TODO add your handling code here:
+        ctr.setEnabledBobot();
+    }//GEN-LAST:event_cboKriteria2ItemStateChanged
+
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
+        // TODO add your handling code here:
+        ctr.insert();
+        ctr.isiTable();
+        ctr.reset();
+    }//GEN-LAST:event_btnTambahActionPerformed
+
+    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
+        // TODO add your handling code here:
+        ctr.update();
+        ctr.isiTable();
+        ctr.reset();
+    }//GEN-LAST:event_btnSimpanActionPerformed
+
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
+        // TODO add your handling code here:
+        ctr.delete();
+        ctr.isiTable();
+        ctr.reset();
+    }//GEN-LAST:event_btnHapusActionPerformed
     
     public JComboBox getCboKriteria1(){
         return cboKriteria1;
