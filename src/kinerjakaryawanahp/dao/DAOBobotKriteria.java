@@ -25,7 +25,7 @@ import kinerjakaryawanahp.model.ModelKriteria;
 public class DAOBobotKriteria implements InterfaceBobotKriteria{
     Connection conn;
     final String insert = "INSERT INTO tbl_bobotkriteria (id_kriteria1, id_kriteria2, bobot_kriteria) VALUES(?,?,?)";
-    final String update = "UPDATE tbl_bobotkriteria SET id_kriteria1=?, id_kriteria2, bobot_kriteria=? WHERE id_kriteria1=? AND id_kriteria2=?";
+    final String update = "UPDATE tbl_bobotkriteria SET id_kriteria1=?, id_kriteria2=?, bobot_kriteria=? WHERE id_kriteria1=? AND id_kriteria2=?";
     final String delete = "DELETE FROM tbl_bobotkriteria WHERE id_kriteria1=? AND id_kriteria2=?";
     final String select = "SELECT k1.id_kriteria AS id_kriteria1,k1.nama_kriteria AS nama_kriteria1,k2.id_kriteria AS id_kriteria2, k2.nama_kriteria AS nama_kriteria2, b.bobot_kriteria AS bobot_kriteria FROM tbl_kriteria k1,tbl_bobotkriteria b LEFT JOIN tbl_kriteria k2 ON b.id_kriteria2=k2.id_kriteria WHERE k1.id_kriteria=b.id_kriteria1 ORDER BY k1.id_kriteria, k2.id_kriteria ASC";
     final String cek_bobotkriteria = "SELECT * FROM tbl_bobotkriteria WHERE id_kriteria1=? AND id_kriteria2=?";
