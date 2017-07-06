@@ -46,8 +46,9 @@ public class ControllerBobotSubKriteria {
     
     private void setItemsSubKriteria(){
         frm.getCboKriteria().setModel(new DefaultComboBoxModel(list_k.toArray()));
-        frm.getCboSubKriteria1().setModel(new DefaultComboBoxModel(list.toArray()));
-        frm.getCboSubKriteria2().setModel(new DefaultComboBoxModel(list.toArray()));
+        
+        //frm.getCboSubKriteria1().setModel(new DefaultComboBoxModel(list.toArray()));
+        //frm.getCboSubKriteria2().setModel(new DefaultComboBoxModel(list.toArray()));
     }
     
     public void reset(){
@@ -69,42 +70,46 @@ public class ControllerBobotSubKriteria {
     }
     
     public void isiField(int row){
-        setSelectedKriteria1(list_bobot.get(row).getKriteria1().getNamaKriteria());
-        setSelectedKriteria2(list_bobot.get(row).getKriteria2().getNamaKriteria());
-        frm.getCboBobotKriteria().setSelectedIndex(0);
+        setSelectedKriteria(list_bobot.get(row).getKriteria().getNamaKriteria());
+        setSelectedSubKriteria1(list_bobot.get(row).getSubKriteria1().getNamaSubKriteria());
+        setSelectedSubKriteria2(list_bobot.get(row).getSubKriteria2().getNamaSubKriteria());
+        frm.getCboBobotSubKriteria().setSelectedIndex(0);
+        frm.getCboKriteria().setEnabled(false);
         frm.getBtnTambah().setEnabled(false);
         frm.getBtnSimpan().setEnabled(true);
         frm.getBtnHapus().setEnabled(true);
     }
     
     public void insert(){
-        ModelBobotKriteria mb1 = new ModelBobotKriteria();
-        ModelBobotKriteria mb2 = new ModelBobotKriteria();
+        ModelBobotSubKriteria mb1 = new ModelBobotSubKriteria();
+        ModelBobotSubKriteria mb2 = new ModelBobotSubKriteria();
         
-        mb1.setKriteria1((ModelKriteria) frm.getCboKriteria1().getSelectedItem());
-        mb1.setKriteria2((ModelKriteria) frm.getCboKriteria2().getSelectedItem());
-        mb1.setBobotKriteria(Double.parseDouble(frm.getCboBobotKriteria().getSelectedItem().toString()));
+        mb1.setSubKriteria1((ModelSubKriteria) frm.getCboSubKriteria1().getSelectedItem());
+        mb1.setSubKriteria2((ModelSubKriteria) frm.getCboSubKriteria2().getSelectedItem());
+        mb1.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
+        mb1.setBobotSubKriteria(Double.parseDouble(frm.getCboBobotSubKriteria().getSelectedItem().toString()));
         
-        mb2.setKriteria1((ModelKriteria) frm.getCboKriteria2().getSelectedItem());
-        mb2.setKriteria2((ModelKriteria) frm.getCboKriteria1().getSelectedItem());
-        mb2.setBobotKriteria(1/Double.parseDouble(frm.getCboBobotKriteria().getSelectedItem().toString()));
+        mb2.setSubKriteria1((ModelSubKriteria) frm.getCboSubKriteria2().getSelectedItem());
+        mb2.setSubKriteria2((ModelSubKriteria) frm.getCboSubKriteria1().getSelectedItem());
+        mb2.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
+        mb2.setBobotSubKriteria(1/Double.parseDouble(frm.getCboBobotSubKriteria().getSelectedItem().toString()));
         
-        if (in_bobot.bobotIsExists(mb1.getKriteria1().getIdKriteria(), mb1.getKriteria2().getIdKriteria())){
+        if (in_bobot.bobotIsExists(mb1.getSubKriteria1().getIdSubKriteria(), mb1.getSubKriteria2().getIdSubKriteria(), mb1.getKriteria().getIdKriteria())){
             in_bobot.delete(mb1);
         }
         
-        if (in_bobot.bobotIsExists(mb2.getKriteria1().getIdKriteria(), mb2.getKriteria2().getIdKriteria())){
+        if (in_bobot.bobotIsExists(mb2.getSubKriteria1().getIdSubKriteria(), mb2.getSubKriteria2().getIdSubKriteria(), mb2.getKriteria().getIdKriteria())){
             in_bobot.delete(mb2);
         }
         
         if(in_bobot.insert(mb1)){
-            if (frm.getCboKriteria1().getSelectedItem().toString().equals(frm.getCboKriteria2().getSelectedItem().toString())){
-                JOptionPane.showMessageDialog(frm, "Data bobot kriteria berhasil ditambahkan","Info",1);
+            if (frm.getCboSubKriteria1().getSelectedItem().toString().equals(frm.getCboSubKriteria2().getSelectedItem().toString())){
+                JOptionPane.showMessageDialog(frm, "Data bobot subkriteria berhasil ditambahkan","Info",1);
             }else{
                 if (in_bobot.insert(mb2)){
-                    JOptionPane.showMessageDialog(frm, "Data bobot kriteria berhasil ditambahkan","Info",1);
+                    JOptionPane.showMessageDialog(frm, "Data bobot subkriteria berhasil ditambahkan","Info",1);
                 }else{
-                    JOptionPane.showMessageDialog(frm, "Data bobot kriteria gagal ditambahkan. Periksa kembali data yang diinput.","Info",0);
+                    JOptionPane.showMessageDialog(frm, "Data bobot subkriteria gagal ditambahkan. Periksa kembali data yang diinput.","Info",0);
                 }
             }
         }else{
@@ -113,98 +118,111 @@ public class ControllerBobotSubKriteria {
     }
     
     public void update(){
-        ModelBobotKriteria mb1 = new ModelBobotKriteria();
-        ModelBobotKriteria mb2 = new ModelBobotKriteria();
+        ModelBobotSubKriteria mb1 = new ModelBobotSubKriteria();
+        ModelBobotSubKriteria mb2 = new ModelBobotSubKriteria();
         
-        mb1.setKriteria1((ModelKriteria) frm.getCboKriteria1().getSelectedItem());
-        mb1.setKriteria2((ModelKriteria) frm.getCboKriteria2().getSelectedItem());
-        mb1.setBobotKriteria(Double.parseDouble(frm.getCboBobotKriteria().getSelectedItem().toString()));
+        mb1.setSubKriteria1((ModelSubKriteria) frm.getCboSubKriteria1().getSelectedItem());
+        mb1.setSubKriteria2((ModelSubKriteria) frm.getCboSubKriteria2().getSelectedItem());
+        mb1.setBobotSubKriteria(Double.parseDouble(frm.getCboBobotSubKriteria().getSelectedItem().toString()));
         
-        mb2.setKriteria1((ModelKriteria) frm.getCboKriteria2().getSelectedItem());
-        mb2.setKriteria2((ModelKriteria) frm.getCboKriteria1().getSelectedItem());
-        mb2.setBobotKriteria(1/Double.parseDouble(frm.getCboBobotKriteria().getSelectedItem().toString()));
+        mb2.setSubKriteria1((ModelSubKriteria) frm.getCboSubKriteria2().getSelectedItem());
+        mb2.setSubKriteria2((ModelSubKriteria) frm.getCboSubKriteria1().getSelectedItem());
+        mb2.setBobotSubKriteria(1/Double.parseDouble(frm.getCboBobotSubKriteria().getSelectedItem().toString()));
         
-        if (in_bobot.bobotIsExists(mb1.getKriteria1().getIdKriteria(), mb1.getKriteria2().getIdKriteria())){
+        if (in_bobot.bobotIsExists(mb1.getSubKriteria1().getIdSubKriteria(), mb1.getSubKriteria2().getIdSubKriteria(), mb1.getKriteria().getIdKriteria())){
             in_bobot.delete(mb1);
         }
         
-        if (in_bobot.bobotIsExists(mb2.getKriteria1().getIdKriteria(), mb2.getKriteria2().getIdKriteria())){
+        if (in_bobot.bobotIsExists(mb2.getSubKriteria1().getIdSubKriteria(), mb2.getSubKriteria2().getIdSubKriteria(), mb2.getKriteria().getIdKriteria())){
             in_bobot.delete(mb2);
         }
         
         if(in_bobot.insert(mb1)){
-            if (frm.getCboKriteria1().getSelectedItem().toString().equals(frm.getCboKriteria2().getSelectedItem().toString())){
-                JOptionPane.showMessageDialog(frm, "perubahan data bobot kriteria berhasil disimpan","Info",1);
+            if (frm.getCboSubKriteria1().getSelectedItem().toString().equals(frm.getCboSubKriteria2().getSelectedItem().toString())){
+                JOptionPane.showMessageDialog(frm, "Perubahan data bobot subkriteria berhasil disimpan","Info",1);
             }else{
                 if (in_bobot.insert(mb2)){
-                    JOptionPane.showMessageDialog(frm, "perubahan data bobot kriteria berhasil disimpan","Info",1);
+                    JOptionPane.showMessageDialog(frm, "Perubahan data bobot subkriteria berhasil disimpan","Info",1);
                 }else{
-                    JOptionPane.showMessageDialog(frm, "Perubahan data bobot kriteria gagal disimpan. Periksa kembali data yang diinput.","Info",0);
+                    JOptionPane.showMessageDialog(frm, "Perubahan data bobot subkriteria gagal disimpan. Periksa kembali data yang diinput.","Info",0);
                 }
             }
         }else{
-            JOptionPane.showMessageDialog(frm, "Perubahan data bobot kriteria gagal disimpan. Periksa kembali data yang diinput.","Info",0);
+            JOptionPane.showMessageDialog(frm, "Perubahan data bobot subkriteria gagal disimpan. Periksa kembali data yang diinput.","Info",0);
         }
     }
     
     public void delete(){
-        ModelBobotKriteria mb1 = new ModelBobotKriteria();
-        ModelBobotKriteria mb2 = new ModelBobotKriteria();
+        ModelBobotSubKriteria mb1 = new ModelBobotSubKriteria();
+        ModelBobotSubKriteria mb2 = new ModelBobotSubKriteria();
         
-        mb1.setKriteria1((ModelKriteria) frm.getCboKriteria1().getSelectedItem());
-        mb1.setKriteria2((ModelKriteria) frm.getCboKriteria2().getSelectedItem());
-        mb1.setBobotKriteria(Double.parseDouble(frm.getCboBobotKriteria().getSelectedItem().toString()));
+        mb1.setSubKriteria1((ModelSubKriteria) frm.getCboSubKriteria1().getSelectedItem());
+        mb1.setSubKriteria2((ModelSubKriteria) frm.getCboSubKriteria2().getSelectedItem());
+        mb1.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
+        mb1.setBobotSubKriteria(Double.parseDouble(frm.getCboBobotSubKriteria().getSelectedItem().toString()));
         
-        mb2.setKriteria1((ModelKriteria) frm.getCboKriteria2().getSelectedItem());
-        mb2.setKriteria2((ModelKriteria) frm.getCboKriteria1().getSelectedItem());
-        mb2.setBobotKriteria(1/Double.parseDouble(frm.getCboBobotKriteria().getSelectedItem().toString()));
+        mb2.setSubKriteria1((ModelSubKriteria) frm.getCboSubKriteria2().getSelectedItem());
+        mb2.setSubKriteria2((ModelSubKriteria) frm.getCboSubKriteria1().getSelectedItem());
+        mb2.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
+        mb2.setBobotSubKriteria(1/Double.parseDouble(frm.getCboBobotSubKriteria().getSelectedItem().toString()));
         
         Boolean a = false;
         
-        if (in_bobot.bobotIsExists(mb1.getKriteria1().getIdKriteria(), mb1.getKriteria2().getIdKriteria())){
+        if (in_bobot.bobotIsExists(mb1.getSubKriteria1().getIdSubKriteria(), mb1.getSubKriteria2().getIdSubKriteria(), mb1.getKriteria().getIdKriteria())){
             a = in_bobot.delete(mb1);
         }
         
-        if (in_bobot.bobotIsExists(mb2.getKriteria1().getIdKriteria(), mb2.getKriteria2().getIdKriteria())){
+        if (in_bobot.bobotIsExists(mb2.getSubKriteria1().getIdSubKriteria(), mb2.getSubKriteria2().getIdSubKriteria(), mb2.getKriteria().getIdKriteria())){
             a = in_bobot.delete(mb2);
         }
         
         if (a){
-            JOptionPane.showMessageDialog(frm, "Data bobot kriteria berhasil dihapus","Info",1);
+            JOptionPane.showMessageDialog(frm, "Data bobot subkriteria berhasil dihapus","Info",1);
         }else{
-            JOptionPane.showMessageDialog(frm, "Data bobot kriteria gagal dihapus","Info",0);
+            JOptionPane.showMessageDialog(frm, "Data bobot subkriteria gagal dihapus","Info",0);
         }
     }
-
-    private void setSelectedKriteria1(String value){
+       
+    private void setSelectedKriteria(String value){
         String item;
-        for(int i=0; i<frm.getCboKriteria1().getItemCount();i++){
-            item = frm.getCboKriteria1().getItemAt(i).toString();
+        for(int i=0; i<frm.getCboKriteria().getItemCount();i++){
+            item = frm.getCboKriteria().getItemAt(i).toString();
             if (item.equals(value)){
-                frm.getCboKriteria1().setSelectedIndex(i);
+                frm.getCboKriteria().setSelectedIndex(i);
                 break;
             }
         }
     }
     
-    private void setSelectedKriteria2(String value){
+    private void setSelectedSubKriteria1(String value){
         String item;
-        for(int i=0; i<frm.getCboKriteria2().getItemCount();i++){
-            item = frm.getCboKriteria2().getItemAt(i).toString();
+        for(int i=0; i<frm.getCboSubKriteria1().getItemCount();i++){
+            item = frm.getCboSubKriteria1().getItemAt(i).toString();
             if (item.equals(value)){
-                frm.getCboKriteria2().setSelectedIndex(i);
+                frm.getCboSubKriteria1().setSelectedIndex(i);
+                break;
+            }
+        }
+    }
+    
+    private void setSelectedSubKriteria2(String value){
+        String item;
+        for(int i=0; i<frm.getCboSubKriteria2().getItemCount();i++){
+            item = frm.getCboSubKriteria2().getItemAt(i).toString();
+            if (item.equals(value)){
+                frm.getCboSubKriteria2().setSelectedIndex(i);
                 break;
             }
         }
     }
     
     public void setEnabledBobot(){
-        if (frm.getCboKriteria1().getSelectedItem().toString().equals(frm.getCboKriteria2().getSelectedItem().toString())){
-            frm.getCboBobotKriteria().setSelectedIndex(0);
-            frm.getCboBobotKriteria().setEnabled(false);
+        if (frm.getCboSubKriteria1().getSelectedItem().toString().equals(frm.getCboSubKriteria2().getSelectedItem().toString())){
+            frm.getCboBobotSubKriteria().setSelectedIndex(0);
+            frm.getCboBobotSubKriteria().setEnabled(false);
         }else{
-            frm.getCboBobotKriteria().setSelectedIndex(2);
-            frm.getCboBobotKriteria().setEnabled(true);
+            frm.getCboBobotSubKriteria().setSelectedIndex(2);
+            frm.getCboBobotSubKriteria().setEnabled(true);
         }
     }
 }
