@@ -7,9 +7,8 @@ package kinerjakaryawanahp.view;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
-//import kinerjakaryawanahp.controller.ControllerBobotKriteria;
+import kinerjakaryawanahp.controller.ControllerBobotSubKriteria;
 
 /**
  *
@@ -20,12 +19,12 @@ public class ViewBobotSubKriteria extends javax.swing.JFrame {
     /**
      * Creates new form ViewBobotKriteria
      */
-    //ControllerBobotKriteria ctr;
+    ControllerBobotSubKriteria ctr;
     
     public ViewBobotSubKriteria() {
         initComponents();
-        //ctr = new ControllerBobotKriteria(this);
-        //ctr.isiTable();
+        ctr = new ControllerBobotSubKriteria(this);
+        ctr.isiTable();
         setLocationRelativeTo(null);
     }
 
@@ -233,43 +232,43 @@ public class ViewBobotSubKriteria extends javax.swing.JFrame {
 
     private void tblBobotSubKriteriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBobotSubKriteriaMouseClicked
         // TODO add your handling code here:
-        //ctr.isiField(tblBobotSubKriteria.getSelectedRow());
+        ctr.isiField(tblBobotSubKriteria.getSelectedRow());
     }//GEN-LAST:event_tblBobotSubKriteriaMouseClicked
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
-        //ctr.reset();
+        ctr.reset();
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void cboSubKriteria1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboSubKriteria1ItemStateChanged
         // TODO add your handling code here:
-        //ctr.setEnabledBobot();
+        ctr.setEnabledBobot();
     }//GEN-LAST:event_cboSubKriteria1ItemStateChanged
 
     private void cboSubKriteria2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboSubKriteria2ItemStateChanged
         // TODO add your handling code here:
-        //ctr.setEnabledBobot();
+        ctr.setEnabledBobot();
     }//GEN-LAST:event_cboSubKriteria2ItemStateChanged
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
         // TODO add your handling code here:
-        //ctr.insert();
-        //ctr.isiTable();
-        //ctr.reset();
+        ctr.insert();
+        ctr.isiTable();
+        ctr.reset();
     }//GEN-LAST:event_btnTambahActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
-        //ctr.update();
-        //ctr.isiTable();
-        //ctr.reset();
+        ctr.update();
+        ctr.isiTable();
+        ctr.reset();
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
-        //ctr.delete();
-        //ctr.isiTable();
-        //ctr.reset();
+        ctr.delete();
+        ctr.isiTable();
+        ctr.reset();
     }//GEN-LAST:event_btnHapusActionPerformed
     
     public JComboBox getCboKriteria(){

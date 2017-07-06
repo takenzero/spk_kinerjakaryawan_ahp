@@ -27,6 +27,7 @@ public class DAOSubKriteria implements InterfaceSubKriteria{
     final String update = "UPDATE tbl_subkriteria SET nama_subkriteria=?, id_kriteria=? WHERE id_subkriteria=?";
     final String delete = "DELETE FROM tbl_subkriteria WHERE id_subkriteria=?";
     final String select = "SELECT a.id_subkriteria, a.nama_subkriteria, b.id_kriteria, b.nama_kriteria from tbl_subkriteria a, tbl_kriteria b WHERE a.id_kriteria=b.id_kriteria ORDER BY a.id_kriteria";
+    final String getsub = "SELECT a.id_subkriteria, a.nama_subkriteria, b.id_kriteria, b.nama_kriteria from tbl_subkriteria a, tbl_kriteria b WHERE a.id_kriteria=b.id_kriteria AND a.id_kriteria=?";
     
     public DAOSubKriteria(){
         try {
@@ -96,6 +97,27 @@ public class DAOSubKriteria implements InterfaceSubKriteria{
                 kriteria.setIdKriteria(rs.getInt("id_kriteria"));
                 kriteria.setNamaKriteria(rs.getString("nama_kriteria"));
                 mk.setKriteria(kriteria);
+                list.add(mk);
+            }
+        }catch(SQLException ex){
+            Logger.getLogger(DAOKaryawan.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+
+    @Override
+    public List<ModelSubKriteria> getSubKriteriaById(ModelKriteria m) {
+        List<ModelSubKriteria> list = null;
+        try{
+            list = new ArrayList<ModelSubKriteria>();
+            PreparedStatement st = connection.prepareStatement(getsub);
+            st.setInt(1, m.getIdKriteria());
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ModelSubKriteria mk = new ModelSubKriteria();
+                mk.setIdSubKriteria(rs.getInt("id_subkriteria"));
+                mk.setNamaSubKriteria(rs.getString("nama_subkriteria"));
+                mk.setKriteria(m);
                 list.add(mk);
             }
         }catch(SQLException ex){
