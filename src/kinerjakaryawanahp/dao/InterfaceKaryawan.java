@@ -13,11 +13,11 @@ import java.util.List;
 import kinerjakaryawanahp.model.ModelKaryawan;
 
 public interface InterfaceKaryawan {
-    public void insert(ModelKaryawan m);
+    public Boolean insert(ModelKaryawan m);
     
-    public void update(ModelKaryawan m);
+    public Boolean update(ModelKaryawan m);
     
-    public void delete(String id);
+    public Boolean delete(String id);
     
     public List<ModelKaryawan> getAllKaryawan();
     

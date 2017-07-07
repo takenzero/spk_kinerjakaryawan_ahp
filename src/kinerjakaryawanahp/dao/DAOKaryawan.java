@@ -22,26 +22,26 @@ import kinerjakaryawanahp.model.ModelKaryawan;
  */
 
 public class DAOKaryawan implements InterfaceKaryawan{
-    Connection connection;
-    final String insert = "INSERT INTO tbl_karyawan(id_karyawan, nama, kelamin, agama, tempat, tgl_lahir, alamat, no_telp) VALUES(?,?,?,?,?,?,?,?)";
-    final String update = "UPDATE tbl_karyawan SET nama=?, kelamin=?, agama=?, tempat=?, tgl_lahir=?, alamat=?, no_telp=? WHERE id_karyawan=?";
-    final String delete = "DELETE from tbl_karyawan WHERE id_karyawan=?";
-    final String select = "SELECT * FROM tbl_karyawan";
-    final String search = "SELECT * FROM tbl_karyawan WHERE nama like ? OR id_karyawan=?";
+    Connection conn;
+    final String INSERT = "INSERT INTO tbl_karyawan(id_karyawan, nama, kelamin, agama, tempat, tgl_lahir, alamat, no_telp) VALUES(?,?,?,?,?,?,?,?)";
+    final String UPDATE = "UPDATE tbl_karyawan SET nama=?, kelamin=?, agama=?, tempat=?, tgl_lahir=?, alamat=?, no_telp=? WHERE id_karyawan=?";
+    final String DELETE = "DELETE from tbl_karyawan WHERE id_karyawan=?";
+    final String SELECT = "SELECT * FROM tbl_karyawan";
+    final String SEARCH = "SELECT * FROM tbl_karyawan WHERE nama like ? OR id_karyawan=?";
     
     public DAOKaryawan(){
         try {
-            connection = KoneksiMySQL.connection();
+            conn = KoneksiMySQL.connection();
         } catch (SQLException ex) {
             Logger.getLogger(DAOKaryawan.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     @Override
-    public void insert(ModelKaryawan m){
+    public Boolean insert(ModelKaryawan m){
         PreparedStatement statement = null;
         try{
-            statement = connection.prepareStatement(insert);
+            statement = conn.prepareStatement(INSERT);
             statement.setString(1, m.getIdKaryawan());
             statement.setString(2, m.getNama());
             statement.setInt(3, m.getKelamin());
@@ -51,6 +51,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
             statement.setString(7, m.getAlamat());
             statement.setString(8, m.getNoTelp());
             statement.executeUpdate();
+            return true;
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
@@ -60,13 +61,14 @@ public class DAOKaryawan implements InterfaceKaryawan{
                 ex.printStackTrace();
             }
         }
+        return false;
     }
     
     @Override
-    public void update(ModelKaryawan m){
+    public Boolean update(ModelKaryawan m){
         PreparedStatement statement = null;
         try{
-            statement = connection.prepareStatement(update);
+            statement = conn.prepareStatement(UPDATE);
             statement.setString(1, m.getNama());
             statement.setInt(2, m.getKelamin());
             statement.setInt(3, m.getAgama());
@@ -76,6 +78,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
             statement.setString(7, m.getNoTelp());
             statement.setString(8, m.getIdKaryawan());
             statement.executeUpdate();
+            return true;
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
@@ -85,15 +88,17 @@ public class DAOKaryawan implements InterfaceKaryawan{
                 ex.printStackTrace();
             }
         }
+        return false;
     }
     
     @Override
-    public void delete(String id){
+    public Boolean delete(String id){
         PreparedStatement statement = null;
         try{
-            statement = connection.prepareStatement(delete);
+            statement = conn.prepareStatement(DELETE);
             statement.setString(1, id);
             statement.executeUpdate();
+            return true;
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
@@ -103,6 +108,7 @@ public class DAOKaryawan implements InterfaceKaryawan{
                 ex.printStackTrace();
             }
         }
+        return false;
     }
     
     @Override
@@ -110,8 +116,8 @@ public class DAOKaryawan implements InterfaceKaryawan{
         List<ModelKaryawan> list = null;
         try {
             list = new ArrayList<ModelKaryawan>();
-            Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery(select);
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(SELECT);
             while (rs.next()){
                 ModelKaryawan mk = new ModelKaryawan();
                 mk.setIdKaryawan(rs.getString("id_karyawan"));
@@ -137,8 +143,8 @@ public class DAOKaryawan implements InterfaceKaryawan{
         List<ModelKaryawan> list = null;
         try {
             list = new ArrayList<ModelKaryawan>();
-            PreparedStatement st = connection.prepareStatement(cari);
-            st.setString(1, "%"+cari+"%");
+            PreparedStatement st = conn.prepareStatement(SEARCH);
+            st.setString(1, "%" + cari + "%");
             st.setString(2, cari);
             ResultSet rs = st.executeQuery();
             while (rs.next()){
