@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 03, 2017 at 09:51 AM
+-- Generation Time: Jul 07, 2017 at 10:47 PM
 -- Server version: 5.7.18-0ubuntu0.17.04.1
 -- PHP Version: 7.0.18-0ubuntu0.17.04.1
 
@@ -38,6 +38,30 @@ CREATE TABLE `tbl_bobotkriteria` (
 
 INSERT INTO `tbl_bobotkriteria` (`id_kriteria1`, `id_kriteria2`, `bobot_kriteria`) VALUES
 (1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_bobotsubkriteria`
+--
+
+CREATE TABLE `tbl_bobotsubkriteria` (
+  `id_subkriteria1` int(11) NOT NULL,
+  `id_subkriteria2` int(11) NOT NULL,
+  `id_kriteria` int(11) NOT NULL,
+  `bobot_subkriteria` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_bobotsubkriteria`
+--
+
+INSERT INTO `tbl_bobotsubkriteria` (`id_subkriteria1`, `id_subkriteria2`, `id_kriteria`, `bobot_subkriteria`) VALUES
+(1, 1, 1, 1),
+(1, 2, 1, 3),
+(2, 1, 1, 0.3333333333333333),
+(1, 3, 1, 3),
+(3, 1, 1, 0.3333333333333333);
 
 -- --------------------------------------------------------
 
