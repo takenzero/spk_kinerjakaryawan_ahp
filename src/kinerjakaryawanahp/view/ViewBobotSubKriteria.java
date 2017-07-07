@@ -63,6 +63,11 @@ public class ViewBobotSubKriteria extends javax.swing.JFrame {
         jLabel3.setText("Pilih Kriteria");
 
         cboKriteria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboKriteria.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboKriteriaItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -270,6 +275,11 @@ public class ViewBobotSubKriteria extends javax.swing.JFrame {
         ctr.isiTable();
         ctr.reset();
     }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void cboKriteriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboKriteriaItemStateChanged
+        // TODO add your handling code here:
+        ctr.setItemsSubKriteria();
+    }//GEN-LAST:event_cboKriteriaItemStateChanged
     
     public JComboBox getCboKriteria(){
         return cboKriteria;

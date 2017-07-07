@@ -37,4 +37,9 @@ public class ModelSubKriteria {
     public ModelKriteria getKriteria(){
         return kriteria;
     }
+    
+    @Override
+    public String toString(){
+        return nama_subkriteria;
+    }
 }

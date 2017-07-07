@@ -25,7 +25,7 @@ import kinerjakaryawanahp.model.ModelKriteria;
  */
 public class DAOBobotSubKriteria implements InterfaceBobotSubKriteria{
     Connection conn;
-    final String insert = "INSERT INTO tbl_bobotsubkriteria (id_kriteria1, id_kriteria2, id_kriteria, bobot_kriteria) VALUES(?,?,?,?)";
+    final String insert = "INSERT INTO tbl_bobotsubkriteria (id_subkriteria1, id_subkriteria2, id_kriteria, bobot_subkriteria) VALUES(?,?,?,?)";
     final String update = "UPDATE tbl_bobotsubkriteria SET id_subkriteria1=?, id_subkriteria2=?, bobot_subkriteria=? WHERE id_subkriteria1=? AND id_subkriteria2=? AND id_kriteria=?";
     final String delete = "DELETE FROM tbl_bobotsubkriteria WHERE id_subkriteria1=? AND id_subkriteria2=? AND id_kriteria=?";
     final String select = "SELECT k.id_kriteria AS id_kriteria, k.nama_kriteria AS nama_kriteria, s1.id_kriteria AS id_subkriteria1,s1.nama_subkriteria AS nama_subkriteria1,s2.id_subkriteria AS id_subkriteria2, s2.nama_subkriteria AS nama_subkriteria2, b.bobot_subkriteria AS bobot_subkriteria FROM tbl_kriteria k, tbl_subkriteria s1,tbl_bobotsubkriteria b LEFT JOIN tbl_subkriteria s2 ON b.id_subkriteria2=s2.id_subkriteria WHERE s1.id_subkriteria=b.id_subkriteria1 AND b.id_kriteria=k.id_kriteria ORDER BY k.id_kriteria, s1.id_subkriteria, s2.id_subkriteria ASC";

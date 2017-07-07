@@ -106,7 +106,7 @@ public class DAOSubKriteria implements InterfaceSubKriteria{
     }
 
     @Override
-    public List<ModelSubKriteria> getSubKriteriaById(ModelKriteria m) {
+    public List<ModelSubKriteria> getSubKriteriaByKriteria(ModelKriteria m) {
         List<ModelSubKriteria> list = null;
         try{
             list = new ArrayList<ModelSubKriteria>();

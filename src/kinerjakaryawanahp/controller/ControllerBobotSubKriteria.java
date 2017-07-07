@@ -40,15 +40,22 @@ public class ControllerBobotSubKriteria {
         list_k = in_k.getAllKriteria();
         list = in.getAllSubKriteria();
         list_bobot = in_bobot.getAllBobotSubKriteria();
-        setItemsSubKriteria();
+        setItemsKriteria();
         reset();
     }
     
-    private void setItemsSubKriteria(){
+    private void setItemsKriteria(){
         frm.getCboKriteria().setModel(new DefaultComboBoxModel(list_k.toArray()));
+        setItemsSubKriteria();
+    }
+    
+    public void setItemsSubKriteria(){
+        ModelKriteria k = (ModelKriteria) frm.getCboKriteria().getSelectedItem();
         
-        //frm.getCboSubKriteria1().setModel(new DefaultComboBoxModel(list.toArray()));
-        //frm.getCboSubKriteria2().setModel(new DefaultComboBoxModel(list.toArray()));
+        list = in.getSubKriteriaByKriteria(k);
+        
+        frm.getCboSubKriteria1().setModel(new DefaultComboBoxModel(list.toArray()));
+        frm.getCboSubKriteria2().setModel(new DefaultComboBoxModel(list.toArray()));
     }
     
     public void reset(){
@@ -61,6 +68,7 @@ public class ControllerBobotSubKriteria {
         frm.getBtnTambah().setEnabled(true);
         frm.getBtnSimpan().setEnabled(false);
         frm.getBtnHapus().setEnabled(false);
+        setItemsKriteria();
     }
     
     public void isiTable(){
@@ -123,10 +131,12 @@ public class ControllerBobotSubKriteria {
         
         mb1.setSubKriteria1((ModelSubKriteria) frm.getCboSubKriteria1().getSelectedItem());
         mb1.setSubKriteria2((ModelSubKriteria) frm.getCboSubKriteria2().getSelectedItem());
+        mb1.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
         mb1.setBobotSubKriteria(Double.parseDouble(frm.getCboBobotSubKriteria().getSelectedItem().toString()));
         
         mb2.setSubKriteria1((ModelSubKriteria) frm.getCboSubKriteria2().getSelectedItem());
         mb2.setSubKriteria2((ModelSubKriteria) frm.getCboSubKriteria1().getSelectedItem());
+        mb2.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
         mb2.setBobotSubKriteria(1/Double.parseDouble(frm.getCboBobotSubKriteria().getSelectedItem().toString()));
         
         if (in_bobot.bobotIsExists(mb1.getSubKriteria1().getIdSubKriteria(), mb1.getSubKriteria2().getIdSubKriteria(), mb1.getKriteria().getIdKriteria())){
