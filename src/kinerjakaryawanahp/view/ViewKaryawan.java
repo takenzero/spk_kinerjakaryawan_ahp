@@ -5,11 +5,6 @@
  */
 package kinerjakaryawanahp.view;
 
-<<<<<<< HEAD
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-=======
 import com.toedter.calendar.JDateChooser;
 import java.util.Date;
 import javax.swing.JButton;
@@ -59,12 +54,12 @@ public class ViewKaryawan extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtTempat = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAlamat = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         txtNoTelp = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         btnTambah = new javax.swing.JButton();
         btnSimpan = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
@@ -101,12 +96,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
 
         jLabel6.setText("/");
 
-<<<<<<< HEAD
-        txtTanggal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyy"))));
-        txtTanggal.setToolTipText("dd/MM/yyyy");
-
-=======
->>>>>>> origin/develop
         jLabel8.setText("Alamat");
 
         txtAlamat.setColumns(20);
@@ -132,21 +121,21 @@ public class ViewKaryawan extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtNama)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtIdKaryawan, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cboAgama, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cboKelamin, javax.swing.GroupLayout.Alignment.LEADING, 0, 138, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtTempat, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cboAgama, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cboKelamin, javax.swing.GroupLayout.Alignment.LEADING, 0, 138, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,15 +158,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(cboAgama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-<<<<<<< HEAD
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtTempat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-=======
->>>>>>> origin/develop
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -432,10 +412,7 @@ public class ViewKaryawan extends javax.swing.JFrame {
     private javax.swing.JButton btnTambah;
     private javax.swing.JComboBox<String> cboAgama;
     private javax.swing.JComboBox<String> cboKelamin;
-<<<<<<< HEAD
-=======
     private com.toedter.calendar.JDateChooser jDateChooser1;
->>>>>>> origin/develop
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -455,10 +432,6 @@ public class ViewKaryawan extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdKaryawan;
     private javax.swing.JTextField txtNama;
     private javax.swing.JTextField txtNoTelp;
-<<<<<<< HEAD
-    private javax.swing.JFormattedTextField txtTanggal;
-=======
->>>>>>> origin/develop
     private javax.swing.JTextField txtTempat;
     // End of variables declaration//GEN-END:variables
 }
