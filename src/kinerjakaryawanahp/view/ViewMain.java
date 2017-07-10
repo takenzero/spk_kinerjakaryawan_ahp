@@ -117,6 +117,11 @@ public class ViewMain extends javax.swing.JFrame {
         jMenu5.add(mnuBobotSubKriteria);
 
         mnuBobotKaryawan.setText("Bobot Karyawan");
+        mnuBobotKaryawan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuBobotKaryawanActionPerformed(evt);
+            }
+        });
         jMenu5.add(mnuBobotKaryawan);
 
         jMenu4.add(jMenu5);
@@ -180,6 +185,11 @@ public class ViewMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         new ViewBobotSubKriteria().setVisible(true);
     }//GEN-LAST:event_mnuBobotSubKriteriaActionPerformed
+
+    private void mnuBobotKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBobotKaryawanActionPerformed
+        // TODO add your handling code here:
+        new ViewSelectKaryawan().setVisible(true);
+    }//GEN-LAST:event_mnuBobotKaryawanActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
