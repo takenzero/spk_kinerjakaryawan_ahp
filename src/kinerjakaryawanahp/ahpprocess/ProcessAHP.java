@@ -2,6 +2,7 @@ package kinerjakaryawanahp.ahpprocess ;
 
 import java.io.*;
 import Jama.*;
+import java.text.DecimalFormat;
 
 public class ProcessAHP implements Serializable,Cloneable{
     public static double EXTREMELY=9.0;
@@ -16,7 +17,7 @@ public class ProcessAHP implements Serializable,Cloneable{
 
     private Matrix A ;
     private int size;
-
+    
     public void set(int i,int j, double value) {
         if (i>=getSize() && j>=getSize())
             throw new IllegalArgumentException("index of a single element should be like 0<=i,j<size");
@@ -152,7 +153,7 @@ public class ProcessAHP implements Serializable,Cloneable{
 
     @Override
     public String toString(){
-        String s=new String();
+        String s = new String();
         s="Matrix : \n";
         for (int i=0;i<getSize();i++){
             for (int j=0;j<getSize();j++){
@@ -198,34 +199,29 @@ public class ProcessAHP implements Serializable,Cloneable{
         B=A;;
         size--;
     }
-
+/*
     public static void main(String args[]){
+        ProcessAHP P=new ProcessAHP(3);
 
-      ProcessAHP P=new ProcessAHP(3);
+        P.set(0, 1, 0.3);
+        P.set(0, 2, 3);
+        P.set(1, 2, 2);
 
-      P.set(0, 1, 3);
-      P.set(0, 2, 3);
-      P.set(1, 2, 2);
+        P.print();
+        
+        System.out.println("");
 
-  //Systemout.println("Print the matrix A");
-      P.print();
-      P.getMaxEigenValue();
+        System.out.println("getMaxEigenValue() : "+ P.getMaxEigenValue());   
+        System.out.println("getInconsistencyIndex() : "+ P.getInconsistencyIndex());
+        System.out.println("getRandomInconsistency() : "+ P.getRandomInconsistency());
+        System.out.println("getInconsistencyRatio() : " +P.getInconsistencyRatio());
+        System.out.println("PairwiseComparisonMatrix is consistency : "+P.isConsistency());
 
-
-
-      System.out.println("");
-
-      System.out.println("getMaxEigenValue() : "+ P.getMaxEigenValue());   
-      System.out.println("getInconsistencyIndex() : "+ P.getInconsistencyIndex());
-      System.out.println("getRandomInconsistency() : "+ P.getRandomInconsistency());
-      System.out.println("getInconsistencyRatio() : " +P.getInconsistencyRatio());
-      System.out.println("PairwiseComparisonMatrix is consistency : "+P.isConsistency());
-
-
-      Matrix W= P.getWeight();
-      W.print(P.getSize(),1);
-
+        Matrix W = P.getWeight();
+        //DecimalFormat df = new DecimalFormat("#.##");
+        //System.out.println(df.format(W.get(1, 0)));
+        W.print(P.getSize(),2);
     }
-
+*/
 
 }

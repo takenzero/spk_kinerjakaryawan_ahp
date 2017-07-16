@@ -29,6 +29,7 @@ public class DAOBobotKriteria implements InterfaceBobotKriteria{
     final String delete = "DELETE FROM tbl_bobotkriteria WHERE id_kriteria1=? AND id_kriteria2=?";
     final String select = "SELECT k1.id_kriteria AS id_kriteria1,k1.nama_kriteria AS nama_kriteria1,k2.id_kriteria AS id_kriteria2, k2.nama_kriteria AS nama_kriteria2, b.bobot_kriteria AS bobot_kriteria FROM tbl_kriteria k1,tbl_bobotkriteria b LEFT JOIN tbl_kriteria k2 ON b.id_kriteria2=k2.id_kriteria WHERE k1.id_kriteria=b.id_kriteria1 ORDER BY k1.id_kriteria, k2.id_kriteria ASC";
     final String cek_bobotkriteria = "SELECT * FROM tbl_bobotkriteria WHERE id_kriteria1=? AND id_kriteria2=?";
+    final String selected_kriteria = "SELECT k1.id_kriteria AS id_kriteria1,k1.nama_kriteria AS nama_kriteria1,k2.id_kriteria AS id_kriteria2, k2.nama_kriteria AS nama_kriteria2, b.bobot_kriteria AS bobot_kriteria FROM tbl_kriteria k1,tbl_bobotkriteria b LEFT JOIN tbl_kriteria k2 ON b.id_kriteria2=k2.id_kriteria WHERE k1.id_kriteria=b.id_kriteria1 AND b.id_kriteria1=? AND b.id_kriteria2=? ORDER BY k1.id_kriteria, k2.id_kriteria ASC";
     
     public DAOBobotKriteria(){
         try {
@@ -126,7 +127,30 @@ public class DAOBobotKriteria implements InterfaceBobotKriteria{
 
     @Override
     public List<ModelBobotKriteria> getBobotSelectedKriteria(int id_kriteria1, int id_kriteria2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<ModelBobotKriteria> list = null;
+        try {
+            list = new ArrayList<ModelBobotKriteria>();
+            PreparedStatement stm = conn.prepareStatement(selected_kriteria);
+            stm.setInt(1, id_kriteria1);
+            stm.setInt(2, id_kriteria2);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                ModelBobotKriteria mb = new ModelBobotKriteria();
+                ModelKriteria mk1 = new ModelKriteria();
+                ModelKriteria mk2 = new ModelKriteria();
+                mk1.setIdKriteria(rs.getInt("id_kriteria1"));
+                mk1.setNamaKriteria(rs.getString("nama_kriteria1"));
+                mk2.setIdKriteria(rs.getInt("id_kriteria2"));
+                mk2.setNamaKriteria(rs.getString("nama_kriteria2"));
+                mb.setKriteria1(mk1);
+                mb.setKriteria2(mk2);
+                mb.setBobotKriteria(rs.getDouble("bobot_kriteria"));
+                list.add(mb);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOBobotKriteria.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
     }
     
 }

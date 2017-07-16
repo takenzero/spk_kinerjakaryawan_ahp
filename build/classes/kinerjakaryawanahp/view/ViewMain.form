@@ -99,11 +99,28 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Analisis"/>
           </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Report"/>
-          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuStartAnalisis">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mulai Proses Perhitungan"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuStartAnalisisActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator4">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuHasilBobot">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hasil Perhitungan Bobot"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuHasil">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hasil Perhitungan Kinerja"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

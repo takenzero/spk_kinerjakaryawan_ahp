@@ -5,6 +5,8 @@
  */
 package kinerjakaryawanahp.view;
 
+import kinerjakaryawanahp.controller.ControllerStartAnalisis;
+
 /**
  *
  * @author TAKEN ZERO
@@ -44,7 +46,10 @@ public class ViewMain extends javax.swing.JFrame {
         mnuBobotSubKriteria = new javax.swing.JMenuItem();
         mnuBobotKaryawan = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        mnuStartAnalisis = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
+        mnuHasilBobot = new javax.swing.JMenuItem();
+        mnuHasil = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(".:: Sistem AHP Kinerja Karyawan ::.");
@@ -129,10 +134,23 @@ public class ViewMain extends javax.swing.JFrame {
         jMenuBar2.add(jMenu4);
 
         jMenu1.setText("Analisis");
-        jMenuBar2.add(jMenu1);
 
-        jMenu2.setText("Report");
-        jMenuBar2.add(jMenu2);
+        mnuStartAnalisis.setText("Mulai Proses Perhitungan");
+        mnuStartAnalisis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuStartAnalisisActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuStartAnalisis);
+        jMenu1.add(jSeparator4);
+
+        mnuHasilBobot.setText("Hasil Perhitungan Bobot");
+        jMenu1.add(mnuHasilBobot);
+
+        mnuHasil.setText("Hasil Perhitungan Kinerja");
+        jMenu1.add(mnuHasil);
+
+        jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
 
@@ -191,9 +209,13 @@ public class ViewMain extends javax.swing.JFrame {
         new ViewSelectKaryawan().setVisible(true);
     }//GEN-LAST:event_mnuBobotKaryawanActionPerformed
 
+    private void mnuStartAnalisisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuStartAnalisisActionPerformed
+        // TODO add your handling code here:
+        ControllerStartAnalisis controllerStartAnalisis = new ControllerStartAnalisis(this);
+    }//GEN-LAST:event_mnuStartAnalisisActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
@@ -201,13 +223,17 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JMenuItem mnuBobotKaryawan;
     private javax.swing.JMenuItem mnuBobotKriteria;
     private javax.swing.JMenuItem mnuBobotSubKriteria;
     private javax.swing.JMenuItem mnuClose;
     private javax.swing.JMenuItem mnuDataKaryawan;
+    private javax.swing.JMenuItem mnuHasil;
+    private javax.swing.JMenuItem mnuHasilBobot;
     private javax.swing.JMenuItem mnuKriteria;
     private javax.swing.JMenuItem mnuLogout;
+    private javax.swing.JMenuItem mnuStartAnalisis;
     private javax.swing.JMenuItem mnuSubKriteria;
     // End of variables declaration//GEN-END:variables
 }
