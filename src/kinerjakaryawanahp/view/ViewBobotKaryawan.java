@@ -5,13 +5,12 @@
  */
 package kinerjakaryawanahp.view;
 
-import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import kinerjakaryawanahp.controller.ControllerBobotKaryawan;
+import kinerjakaryawanahp.model.ModelKaryawan;
 
 /**
  *
@@ -24,10 +23,9 @@ public class ViewBobotKaryawan extends javax.swing.JFrame {
      */
     ControllerBobotKaryawan ctr;
             
-    public ViewBobotKaryawan() {
+    public ViewBobotKaryawan(ModelKaryawan k) {
         initComponents();
-        //jDateChooser1.setDate(new Date());
-        ctr = new ControllerBobotKaryawan(this);
+        ctr = new ControllerBobotKaryawan(this, k);
         ctr.isiTable();
         setLocationRelativeTo(null);
     }
@@ -63,6 +61,11 @@ public class ViewBobotKaryawan extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -134,6 +137,11 @@ public class ViewBobotKaryawan extends javax.swing.JFrame {
         jLabel7.setText("Kriteria");
 
         cboKriteria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboKriteria.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboKriteriaItemStateChanged(evt);
+            }
+        });
 
         jLabel10.setText("Nilai");
 
@@ -305,6 +313,16 @@ public class ViewBobotKaryawan extends javax.swing.JFrame {
         // TODO add your handling code here:
         ctr.isiField(tblBobotKaryawan.getSelectedRow());
     }//GEN-LAST:event_tblBobotKaryawanMouseClicked
+
+    private void cboKriteriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboKriteriaItemStateChanged
+        // TODO add your handling code here:
+        ctr.setItemsSubKriteria();
+    }//GEN-LAST:event_cboKriteriaItemStateChanged
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        new ViewSelectKaryawan().setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapus;

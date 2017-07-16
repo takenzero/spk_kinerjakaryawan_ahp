@@ -3,20 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelTabelKaryawan.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewBobotKaryawan.java</file>
+            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/DAOBobotKaryawan.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewSelectKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelSelectTabelKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/koneksi/KoneksiMySQL.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/main/Main.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerBobotKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/DAOKaryawan.java</file>
             <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerSelectKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewLogin.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/model/ModelBobotKaryawan.java</file>
-            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/InterfaceKaryawan.java</file>
+            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/view/ViewMain.java</file>
+            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/dao/InterfaceBobotKaryawan.java</file>
+            <file>file:/home/taken/NetBeansProjects/KinerjaKaryawanAHP/src/kinerjakaryawanahp/controller/ControllerBobotKaryawan.java</file>
         </group>
     </open-files>
 </project-private>

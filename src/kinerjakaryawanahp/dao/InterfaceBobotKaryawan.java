@@ -17,7 +17,6 @@ public interface InterfaceBobotKaryawan {
     public Boolean insert(ModelBobotKaryawan m);
     public Boolean update(ModelBobotKaryawan m);
     public Boolean delete(ModelBobotKaryawan m);
-    public List<ModelBobotSubKriteria> getAllBobotKaryawan(int id_karyawan);
-    public Boolean bobotIsExists(int id_karyawan, int id_kriteria, int id_subkriteria);
-    //public List<ModelBobotSubKriteria> getBobotSelectedSubKriteria(int id_subkriteria1, int id_subkriteria2, int id_kriteria);
+    public List<ModelBobotKaryawan> getAllBobotKaryawan(String id_karyawan);
+    public Boolean bobotIsExists(String id_karyawan, int id_kriteria);
 }

@@ -9,91 +9,160 @@ package kinerjakaryawanahp.controller;
  *
  * @author taken
  */
-import java.util.Date;
-import kinerjakaryawanahp.dao.DAOKaryawan;
-import kinerjakaryawanahp.dao.InterfaceKaryawan;
 import kinerjakaryawanahp.model.ModelKaryawan;
-import kinerjakaryawanahp.model.ModelTabelKaryawan;
 import kinerjakaryawanahp.view.ViewBobotKaryawan;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import kinerjakaryawanahp.dao.DAOBobotKaryawan;
+import kinerjakaryawanahp.dao.DAOKriteria;
+import kinerjakaryawanahp.dao.DAOSubKriteria;
+import kinerjakaryawanahp.dao.InterfaceBobotKaryawan;
+import kinerjakaryawanahp.dao.InterfaceKriteria;
+import kinerjakaryawanahp.dao.InterfaceSubKriteria;
+import kinerjakaryawanahp.model.ModelBobotKaryawan;
+import kinerjakaryawanahp.model.ModelKriteria;
+import kinerjakaryawanahp.model.ModelSubKriteria;
+import kinerjakaryawanahp.model.ModelTabelBobotKaryawan;
 
 public class ControllerBobotKaryawan {
     ViewBobotKaryawan frm;
-    InterfaceKaryawan in;
-    List<ModelKaryawan> list;
+    InterfaceKriteria in_k;
+    InterfaceSubKriteria in_s;
+    InterfaceBobotKaryawan in_bobot;
+    List<ModelBobotKaryawan> list_bobot;
+    List<ModelKriteria> list_k;
+    List<ModelSubKriteria> list_s;
+    ModelKaryawan karyawan;
     
-    public ControllerBobotKaryawan(ViewBobotKaryawan frm){
+    public ControllerBobotKaryawan(ViewBobotKaryawan frm, ModelKaryawan karyawan){
         this.frm = frm;
+        this.karyawan = karyawan;
+        in_bobot = new DAOBobotKaryawan();
+        in_k = new DAOKriteria();
+        in_s = new DAOSubKriteria();
+        list_bobot = in_bobot.getAllBobotKaryawan(karyawan.getIdKaryawan());
+        list_k = in_k.getAllKriteria();
+        setFieldKaryawan();
+        setItemsKriteria();
         reset();
-        in = new DAOKaryawan();
-        list = in.getAllKaryawan();
+    }
+    
+    private void setItemsKriteria(){
+        frm.getCboKriteria().setModel(new DefaultComboBoxModel(list_k.toArray()));
+        setItemsSubKriteria();
+    }
+    
+    public void setItemsSubKriteria(){
+        ModelKriteria k = (ModelKriteria) frm.getCboKriteria().getSelectedItem();
+        list_s = in_s.getSubKriteriaByKriteria(k);
+        frm.getCboSubKriteria().setModel(new DefaultComboBoxModel(list_s.toArray()));
     }
     
     public void reset(){
-        //frm.getTxtIdKaryawan().setText("");
-        //frm.getTxtNama().setText("");
-        frm.getTxtIdKaryawan().setEnabled(true);
+        frm.getCboKriteria().setSelectedIndex(0);
+        frm.getCboSubKriteria().setSelectedIndex(0);
         frm.getBtnTambah().setEnabled(true);
         frm.getBtnSimpan().setEnabled(false);
         frm.getBtnHapus().setEnabled(false);
     }
     
     public void isiTable(){
-        list = in.getAllKaryawan();
-        ModelTabelKaryawan mtk = new ModelTabelKaryawan(list);
+        list_bobot = in_bobot.getAllBobotKaryawan(karyawan.getIdKaryawan());
+        ModelTabelBobotKaryawan mtk = new ModelTabelBobotKaryawan(list_bobot);
         frm.getTblKaryawan().setModel(mtk);
     }
     
     public void isiField(int row){
-        //frm.getTxtIdKaryawan().setText(list.get(row).getIdKaryawan());
-        //frm.getTxtNama().setText(list.get(row).getNama());
+        setSelectedKriteria(list_bobot.get(row).getKriteria().getNamaKriteria());
+        setSelectedSubKriteria(list_bobot.get(row).getSubKriteria().getNamaSubKriteria());
         frm.getBtnTambah().setEnabled(false);
         frm.getBtnSimpan().setEnabled(true);
         frm.getBtnHapus().setEnabled(true);
     }
     
     public void insert(){
-        ModelKaryawan mk = new ModelKaryawan();
+        ModelBobotKaryawan mb = new ModelBobotKaryawan();
         
-        if (!frm.getTxtIdKaryawan().getText().trim().isEmpty() && !frm.getTxtNama().getText().trim().isEmpty()){
-            //mk.setIdKaryawan(frm.getTxtIdKaryawan().getText().trim());
-            //mk.setNama(frm.getTxtNama().getText().trim());
-            if (in.insert(mk)){
-                JOptionPane.showMessageDialog(frm, "Data karyawan berhasil ditambahkan","Info",1);
-            }else{
-                JOptionPane.showMessageDialog(frm, "Data karyawan gagal ditambahkan. Periksa kembali data yang diinput.","Info",0);
-            }
+        mb.setKaryawan(karyawan);
+        mb.setSubKriteria((ModelSubKriteria) frm.getCboSubKriteria().getSelectedItem());
+        mb.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
+        
+        //JOptionPane.showMessageDialog(frm, in_bobot.bobotIsExists(mb.getKaryawan().getIdKaryawan(), mb.getKriteria().getIdKriteria()));
+        
+        if (in_bobot.bobotIsExists(mb.getKaryawan().getIdKaryawan(), mb.getKriteria().getIdKriteria())){
+            in_bobot.delete(mb);
+        }
+        
+        if(in_bobot.insert(mb)){
+            JOptionPane.showMessageDialog(frm, "Data nilai karyawan berhasil ditambahkan","Info",1);
         }else{
-            JOptionPane.showMessageDialog(frm, "Id Karyawan dan Nama harus diisi","Info",2);
+            JOptionPane.showMessageDialog(frm, "Data nilai karyawan gagal ditambahkan. Periksa kembali data yang diinput.","Info",0);
         }
     }
     
     public void update(){
-        ModelKaryawan mk = new ModelKaryawan();
+        ModelBobotKaryawan mb = new ModelBobotKaryawan();
         
-        if (!frm.getTxtIdKaryawan().getText().trim().isEmpty() && !frm.getTxtNama().getText().trim().isEmpty()){
-            //mk.setIdKaryawan(frm.getTxtIdKaryawan().getText().trim());
-            //mk.setNama(frm.getTxtNama().getText().trim());
-            if (in.update(mk)){
-                JOptionPane.showMessageDialog(frm, "Perubahan data karyawan berhasil disimpan","Info",1);
-            }else{
-                JOptionPane.showMessageDialog(frm, "Perubahan data karyawan gagal disimpan","Info",0);
-            }
+        mb.setKaryawan(karyawan);
+        mb.setSubKriteria((ModelSubKriteria) frm.getCboSubKriteria().getSelectedItem());
+        mb.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
+        
+        //JOptionPane.showMessageDialog(frm, in_bobot.bobotIsExists(mb.getKaryawan().getIdKaryawan(), mb.getKriteria().getIdKriteria()));
+        
+        if (in_bobot.bobotIsExists(mb.getKaryawan().getIdKaryawan(), mb.getKriteria().getIdKriteria())){
+            in_bobot.delete(mb);
+        }
+        
+        if(in_bobot.insert(mb)){
+            JOptionPane.showMessageDialog(frm, "Data nilai karyawan berhasil diubah","Info",1);
         }else{
-            JOptionPane.showMessageDialog(frm, "Id Karyawan dan Nama harus diisi","Info",2);
+            JOptionPane.showMessageDialog(frm, "Data nilai karyawan gagal diubah. Periksa kembali data yang diinput.","Info",0);
         }
     }
     
     public void delete(){
-        if (!frm.getTxtIdKaryawan().getText().trim().isEmpty()){
-            if (in.delete(frm.getTxtIdKaryawan().getText().trim())){
-                JOptionPane.showMessageDialog(frm, "Data karyawan berhasil dihapus.","Info",1);
+        ModelBobotKaryawan mb = new ModelBobotKaryawan();
+        
+        mb.setKaryawan(karyawan);
+        mb.setSubKriteria((ModelSubKriteria) frm.getCboSubKriteria().getSelectedItem());
+        mb.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
+        
+        if (in_bobot.bobotIsExists(mb.getKaryawan().getIdKaryawan(), mb.getKriteria().getIdKriteria())){
+            if (in_bobot.delete(mb)){
+                JOptionPane.showMessageDialog(frm, "Data nilai karyawan berhasil dihapus","Info",1);
             }else{
-                JOptionPane.showMessageDialog(frm, "Data karyawan gagal dihapus","Info",0);
+                JOptionPane.showMessageDialog(frm, "Data nilai karyawan gagal dihapus. Periksa kembali data yang diinput.","Info",0);
             }
         }else{
-            JOptionPane.showMessageDialog(frm, "Id Karyawan harus diisi","Info",2);
+            JOptionPane.showMessageDialog(frm, "Nilai karyawan dengan kriteria yang dipilih tidak ditemukan","Info",2);
+        }
+    }
+    
+    private void setFieldKaryawan(){
+        frm.getTxtIdKaryawan().setText(karyawan.getIdKaryawan());
+        frm.getTxtNama().setText(karyawan.getNama());
+    }
+    
+    private void setSelectedKriteria(String value){
+        String item;
+        for(int i=0; i<frm.getCboKriteria().getItemCount();i++){
+            item = frm.getCboKriteria().getItemAt(i).toString();
+            if (item.equals(value)){
+                frm.getCboKriteria().setSelectedIndex(i);
+                break;
+            }
+        }
+    }
+    
+    private void setSelectedSubKriteria(String value){
+        String item;
+        for(int i=0; i<frm.getCboSubKriteria().getItemCount();i++){
+            item = frm.getCboSubKriteria().getItemAt(i).toString();
+            if (item.equals(value)){
+                frm.getCboSubKriteria().setSelectedIndex(i);
+                break;
+            }
         }
     }
 }
