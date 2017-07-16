@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 07, 2017 at 10:47 PM
+-- Generation Time: Jul 16, 2017 at 10:18 AM
 -- Server version: 5.7.18-0ubuntu0.17.04.1
 -- PHP Version: 7.0.18-0ubuntu0.17.04.1
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_kinerjakaryawanahp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_bobotkaryawan`
+--
+
+CREATE TABLE `tbl_bobotkaryawan` (
+  `id_karyawan` varchar(6) NOT NULL,
+  `id_kriteria` int(11) NOT NULL,
+  `id_subkriteria` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_bobotkaryawan`
+--
+
+INSERT INTO `tbl_bobotkaryawan` (`id_karyawan`, `id_kriteria`, `id_subkriteria`) VALUES
+('K10001', 3, 6),
+('K10001', 1, 2);
 
 -- --------------------------------------------------------
 
