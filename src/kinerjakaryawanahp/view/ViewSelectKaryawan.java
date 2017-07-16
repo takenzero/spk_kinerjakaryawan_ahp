@@ -100,10 +100,20 @@ public class ViewSelectKaryawan extends javax.swing.JFrame {
         tblKaryawan.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tblKaryawan.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tblKaryawan.getTableHeader().setReorderingAllowed(false);
+        tblKaryawan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblKaryawanMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblKaryawan);
 
         btnSetBobot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/edit.png"))); // NOI18N
         btnSetBobot.setText("Bobot Karyawan");
+        btnSetBobot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetBobotActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,6 +161,16 @@ public class ViewSelectKaryawan extends javax.swing.JFrame {
         // TODO add your handling code here:
         ctr.cari();
     }//GEN-LAST:event_btnCariActionPerformed
+
+    private void btnSetBobotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetBobotActionPerformed
+        // TODO add your handling code here:
+        ctr.showBobotKaryawan();
+    }//GEN-LAST:event_btnSetBobotActionPerformed
+
+    private void tblKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKaryawanMouseClicked
+        // TODO add your handling code here:
+        ctr.isiField(tblKaryawan.getSelectedRow());
+    }//GEN-LAST:event_tblKaryawanMouseClicked
     /**/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

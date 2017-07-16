@@ -10,10 +10,17 @@ package kinerjakaryawanahp.model;
  * @author taken
  */
 public class ModelBobotKaryawan {
+    private ModelKaryawan karyawan;
     private ModelKriteria kriteria;
-    private ModelSubKriteria subkriteria1;
-    private ModelSubKriteria subkriteria2;
-    private double bobot_subkriteria;
+    private ModelSubKriteria subkriteria;
+    
+    public void setKaryawan(ModelKaryawan karyawan){
+        this.karyawan = karyawan;
+    }
+    
+    public ModelKaryawan getKaryawan(){
+        return karyawan;
+    }
     
     public void setKriteria(ModelKriteria kriteria){
         this.kriteria = kriteria;
@@ -23,27 +30,12 @@ public class ModelBobotKaryawan {
         return kriteria;
     }
     
-    public void setSubKriteria1(ModelSubKriteria subkriteria1){
-        this.subkriteria1 = subkriteria1;
+    public void setSubKriteria(ModelSubKriteria subkriteria){
+        this.subkriteria = subkriteria;
     }
     
-    public ModelSubKriteria getSubKriteria1(){
-        return subkriteria1;
+    public ModelSubKriteria getSubKriteria(){
+        return subkriteria;
     }
     
-    public void setSubKriteria2(ModelSubKriteria subkriteria2){
-        this.subkriteria2 = subkriteria2;
-    }
-    
-    public ModelSubKriteria getSubKriteria2(){
-        return subkriteria2;
-    }
-    
-    public void setBobotSubKriteria(double bobot_subkriteria){
-        this.bobot_subkriteria = bobot_subkriteria;
-    }
-    
-    public double getBobotSubKriteria(){
-        return bobot_subkriteria;
-    }
 }
