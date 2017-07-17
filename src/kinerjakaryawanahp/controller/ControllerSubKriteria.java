@@ -8,6 +8,8 @@ package kinerjakaryawanahp.controller;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.TableColumnModel;
 import kinerjakaryawanahp.dao.DAOSubKriteria;
 import kinerjakaryawanahp.dao.DAOKriteria;
 import kinerjakaryawanahp.dao.InterfaceKriteria;
@@ -61,6 +63,7 @@ public class ControllerSubKriteria {
         list = in.getAllSubKriteria(kriteria.getIdKriteria());
         ModelTabelSubKriteria mtk = new ModelTabelSubKriteria(list);
         frm.getTblSubKriteria().setModel(mtk);
+        setTableColumnSize();
     }
     
     public void isiField(int row){
@@ -122,6 +125,15 @@ public class ControllerSubKriteria {
                 break;
             }
         }
+    }
+    
+    public void setTableColumnSize(){
+        JTable tbl = frm.getTblSubKriteria();
+        TableColumnModel columnModel = tbl.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(50);
+        columnModel.getColumn(1).setPreferredWidth(100);
+        columnModel.getColumn(2).setPreferredWidth(190);
+        columnModel.getColumn(3).setPreferredWidth(180);
     }
 
 }

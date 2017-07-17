@@ -14,6 +14,8 @@ import kinerjakaryawanahp.view.ViewBobotKaryawan;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.TableColumnModel;
 import kinerjakaryawanahp.dao.DAOBobotKaryawan;
 import kinerjakaryawanahp.dao.DAOKriteria;
 import kinerjakaryawanahp.dao.DAOSubKriteria;
@@ -71,6 +73,7 @@ public class ControllerBobotKaryawan {
         list_bobot = in_bobot.getAllBobotKaryawan(karyawan.getIdKaryawan());
         ModelTabelBobotKaryawan mtk = new ModelTabelBobotKaryawan(list_bobot);
         frm.getTblKaryawan().setModel(mtk);
+        setTableColumnSize();
     }
     
     public void isiField(int row){
@@ -164,5 +167,13 @@ public class ControllerBobotKaryawan {
                 break;
             }
         }
+    }
+    
+    public void setTableColumnSize(){
+        JTable tbl = frm.getTblKaryawan();
+        TableColumnModel columnModel = tbl.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(50);
+        columnModel.getColumn(1).setPreferredWidth(250);
+        columnModel.getColumn(2).setPreferredWidth(260);
     }
 }

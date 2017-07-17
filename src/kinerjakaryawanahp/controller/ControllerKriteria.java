@@ -7,6 +7,8 @@ package kinerjakaryawanahp.controller;
 
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.TableColumnModel;
 import kinerjakaryawanahp.dao.DAOKriteria;
 import kinerjakaryawanahp.dao.InterfaceKriteria;
 import kinerjakaryawanahp.model.ModelKriteria;
@@ -40,6 +42,7 @@ public class ControllerKriteria {
         list = in.getAllKriteria();
         ModelTabelKriteria mtk = new ModelTabelKriteria(list);
         frm.getTblKriteria().setModel(mtk);
+        setTableColumnSize();
     }
     
     public void isiField(int row){
@@ -87,5 +90,13 @@ public class ControllerKriteria {
         }else{
             JOptionPane.showMessageDialog(frm, "Data kriteria gagal dihapus","Info",0);
         }
+    }
+    
+    public void setTableColumnSize(){
+        JTable tbl = frm.getTblKriteria();
+        TableColumnModel columnModel = tbl.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(50);
+        columnModel.getColumn(1).setPreferredWidth(80);
+        columnModel.getColumn(2).setPreferredWidth(360);
     }
 }

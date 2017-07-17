@@ -12,7 +12,7 @@ import javax.swing.table.AbstractTableModel;
  * @author taken
  */
 public class ModelTabelBobotKaryawan extends AbstractTableModel{
-    final String[] nama_kolom = {"Kriteria", "Nilai"};
+    final String[] nama_kolom = {"No","Kriteria", "Nilai"};
     List<ModelBobotKaryawan> list;
     
     public ModelTabelBobotKaryawan(List<ModelBobotKaryawan> list){
@@ -21,7 +21,7 @@ public class ModelTabelBobotKaryawan extends AbstractTableModel{
     
     @Override
     public int getColumnCount(){
-        return 2;
+        return 3;
     }
     
     @Override
@@ -38,8 +38,10 @@ public class ModelTabelBobotKaryawan extends AbstractTableModel{
     public Object getValueAt(int row, int column){
         switch (column){
             case 0:
-                return list.get(row).getKriteria().getNamaKriteria();
+                return row+1;
             case 1:
+                return list.get(row).getKriteria().getNamaKriteria();
+            case 2:
                 return list.get(row).getSubKriteria().getNamaSubKriteria();
             default:
                 return null;

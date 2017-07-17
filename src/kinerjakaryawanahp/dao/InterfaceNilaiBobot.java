@@ -5,6 +5,7 @@
  */
 package kinerjakaryawanahp.dao;
 
+import java.util.List;
 import kinerjakaryawanahp.model.ModelNilaiKaryawan;
 import kinerjakaryawanahp.model.ModelNilaiKriteria;
 import kinerjakaryawanahp.model.ModelNilaiSubKriteria;
@@ -19,5 +20,6 @@ public interface InterfaceNilaiBobot {
     public Boolean insertNilaiSubKriteria(ModelNilaiSubKriteria subkriteria);
     public Boolean insertNilaiKaryawan(ModelNilaiKaryawan karyawan);
     public Boolean insertValues(ModelValues values);
+    public List<ModelNilaiKaryawan> getNilaiKaryawan();
     public void clearTable();
 }

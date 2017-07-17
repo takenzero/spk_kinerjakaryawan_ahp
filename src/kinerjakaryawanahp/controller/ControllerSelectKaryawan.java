@@ -15,6 +15,8 @@ import kinerjakaryawanahp.model.ModelKaryawan;
 import kinerjakaryawanahp.model.ModelTabelKaryawan;
 import kinerjakaryawanahp.view.ViewSelectKaryawan;
 import java.util.List;
+import javax.swing.JTable;
+import javax.swing.table.TableColumnModel;
 import kinerjakaryawanahp.view.ViewBobotKaryawan;
 
 public class ControllerSelectKaryawan {
@@ -34,6 +36,7 @@ public class ControllerSelectKaryawan {
         list = in.getAllKaryawan();
         ModelTabelKaryawan mtk = new ModelTabelKaryawan(list);
         frm.getTblKaryawan().setModel(mtk);
+        setTableColumnSize();
     }
     
     public void isiField(int row){
@@ -55,5 +58,19 @@ public class ControllerSelectKaryawan {
     public void showBobotKaryawan(){
         this.frm.dispose();
         new ViewBobotKaryawan(karyawan).setVisible(true);
+    }
+    
+    public void setTableColumnSize(){
+        JTable tbl = frm.getTblKaryawan();
+        TableColumnModel columnModel = tbl.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(50);
+        columnModel.getColumn(1).setPreferredWidth(100);
+        columnModel.getColumn(2).setPreferredWidth(200);
+        columnModel.getColumn(3).setPreferredWidth(100);
+        columnModel.getColumn(4).setPreferredWidth(100);
+        columnModel.getColumn(5).setPreferredWidth(150);
+        columnModel.getColumn(6).setPreferredWidth(100);
+        columnModel.getColumn(7).setPreferredWidth(200);
+        columnModel.getColumn(8).setPreferredWidth(120);
     }
 }

@@ -23,6 +23,7 @@ import kinerjakaryawanahp.dao.InterfaceSubKriteria;
 import kinerjakaryawanahp.model.ModelBobotKriteria;
 import kinerjakaryawanahp.model.ModelBobotSubKriteria;
 import kinerjakaryawanahp.model.ModelKriteria;
+import kinerjakaryawanahp.model.ModelNilaiKaryawan;
 import kinerjakaryawanahp.model.ModelNilaiKriteria;
 import kinerjakaryawanahp.model.ModelNilaiSubKriteria;
 import kinerjakaryawanahp.model.ModelSubKriteria;
@@ -146,7 +147,16 @@ public class ControllerStartAnalisis {
             values.setId(id_kriteria);
             in_nilaibobot.insertValues(values);
         }
+        ProcessKaryawan();
+    }
+    
+    private void ProcessKaryawan(){
+        List<ModelNilaiKaryawan> list = in_nilaibobot.getNilaiKaryawan();
         
+        for(int i=0; i<list.size(); i++){
+            ModelNilaiKaryawan k = list.get(i);
+            in_nilaibobot.insertNilaiKaryawan(k);
+        }
         JOptionPane.showMessageDialog(frm, "Proses perhitungan nilai kinerja karyawan selesai.","Info",1);
     }
 }
