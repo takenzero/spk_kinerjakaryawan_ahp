@@ -26,7 +26,7 @@ public class DAOSubKriteria implements InterfaceSubKriteria{
     final String insert = "INSERT INTO tbl_subkriteria (nama_subkriteria,id_kriteria) VALUES(?,?)";
     final String update = "UPDATE tbl_subkriteria SET nama_subkriteria=?, id_kriteria=? WHERE id_subkriteria=?";
     final String delete = "DELETE FROM tbl_subkriteria WHERE id_subkriteria=?";
-    final String select = "SELECT a.id_subkriteria, a.nama_subkriteria, b.id_kriteria, b.nama_kriteria from tbl_subkriteria a, tbl_kriteria b WHERE a.id_kriteria=b.id_kriteria ORDER BY a.id_kriteria";
+    final String select = "SELECT a.id_subkriteria, a.nama_subkriteria, b.id_kriteria, b.nama_kriteria from tbl_subkriteria a, tbl_kriteria b WHERE a.id_kriteria=b.id_kriteria AND a.id_kriteria=? ORDER BY a.id_kriteria";
     final String getsub = "SELECT a.id_subkriteria, a.nama_subkriteria, b.id_kriteria, b.nama_kriteria from tbl_subkriteria a, tbl_kriteria b WHERE a.id_kriteria=b.id_kriteria AND a.id_kriteria=?";
     
     public DAOSubKriteria(){
@@ -83,12 +83,13 @@ public class DAOSubKriteria implements InterfaceSubKriteria{
     }
     
     @Override
-    public List<ModelSubKriteria> getAllSubKriteria(){
+    public List<ModelSubKriteria> getAllSubKriteria(int id_kriteria){
         List<ModelSubKriteria> list = null;
         try{
             list = new ArrayList<ModelSubKriteria>();
-            Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery(select);
+            PreparedStatement st = connection.prepareStatement(select);
+            st.setInt(1, id_kriteria);
+            ResultSet rs = st.executeQuery();
             while(rs.next()){
                 ModelSubKriteria mk = new ModelSubKriteria();
                 ModelKriteria kriteria = new ModelKriteria();

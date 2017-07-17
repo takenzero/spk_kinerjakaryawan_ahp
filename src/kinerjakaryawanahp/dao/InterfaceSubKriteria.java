@@ -17,6 +17,6 @@ public interface InterfaceSubKriteria {
     public Boolean insert(ModelSubKriteria m);
     public Boolean update(ModelSubKriteria m);
     public Boolean delete(int id_kriteria);
-    public List<ModelSubKriteria> getAllSubKriteria();
+    public List<ModelSubKriteria> getAllSubKriteria(int id_kriteria);
     public List<ModelSubKriteria> getSubKriteriaByKriteria(ModelKriteria m);
 }

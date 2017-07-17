@@ -38,7 +38,7 @@ public class ControllerBobotSubKriteria {
         in = new DAOSubKriteria();
         in_bobot = new DAOBobotSubKriteria();
         list_k = in_k.getAllKriteria();
-        list = in.getAllSubKriteria();
+        //list = in.getAllSubKriteria();
         list_bobot = in_bobot.getAllBobotSubKriteria();
         setItemsKriteria();
         reset();

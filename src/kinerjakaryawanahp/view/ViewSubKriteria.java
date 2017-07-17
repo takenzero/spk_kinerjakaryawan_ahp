@@ -73,6 +73,16 @@ public class ViewSubKriteria extends javax.swing.JFrame {
         txtIdSubKriteria.setEnabled(false);
 
         cboKriteria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboKriteria.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboKriteriaItemStateChanged(evt);
+            }
+        });
+        cboKriteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboKriteriaActionPerformed(evt);
+            }
+        });
 
         btnTambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kinerjakaryawanahp/img/plus.png"))); // NOI18N
         btnTambah.setText("Tambah");
@@ -189,12 +199,10 @@ public class ViewSubKriteria extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,6 +247,15 @@ public class ViewSubKriteria extends javax.swing.JFrame {
         // TODO add your handling code here:
         ctr.reset();
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void cboKriteriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboKriteriaItemStateChanged
+        // TODO add your handling code here:
+        ctr.isiTable();
+    }//GEN-LAST:event_cboKriteriaItemStateChanged
+
+    private void cboKriteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKriteriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboKriteriaActionPerformed
 
     public JTextField getTxtIdSubKriteria(){
         return txtIdSubKriteria;

@@ -27,18 +27,23 @@ public class ControllerSubKriteria {
     List<ModelSubKriteria> list;
     List<ModelKriteria> list_kriteria;
     
+    ModelKriteria kriteria;
+    
     public ControllerSubKriteria(ViewSubKriteria frm){
         this.frm = frm;
         in_kriteria = new DAOKriteria();
         list_kriteria = in_kriteria.getAllKriteria();
-        in = new DAOSubKriteria();
-        list = in.getAllSubKriteria();
         setKriteria(list_kriteria);
+        in = new DAOSubKriteria();
+        kriteria = new ModelKriteria();
+        kriteria = (ModelKriteria) frm.getCboKriteria().getSelectedItem();
+        list = in.getAllSubKriteria(kriteria.getIdKriteria());
         this.reset();
     }
     
     private void setKriteria(List<ModelKriteria> list_kriteria){
         frm.getCboKriteria().setModel(new DefaultComboBoxModel(list_kriteria.toArray()));
+        frm.getCboKriteria().setSelectedIndex(0);
     }
     
     public final void reset(){
@@ -51,7 +56,9 @@ public class ControllerSubKriteria {
     }
     
     public void isiTable(){
-        list = in.getAllSubKriteria();
+        kriteria = (ModelKriteria) frm.getCboKriteria().getSelectedItem();
+        
+        list = in.getAllSubKriteria(kriteria.getIdKriteria());
         ModelTabelSubKriteria mtk = new ModelTabelSubKriteria(list);
         frm.getTblSubKriteria().setModel(mtk);
     }
