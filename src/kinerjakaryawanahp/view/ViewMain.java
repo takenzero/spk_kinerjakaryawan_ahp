@@ -145,9 +145,19 @@ public class ViewMain extends javax.swing.JFrame {
         jMenu1.add(jSeparator4);
 
         mnuHasilBobot.setText("Hasil Perhitungan Bobot");
+        mnuHasilBobot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuHasilBobotActionPerformed(evt);
+            }
+        });
         jMenu1.add(mnuHasilBobot);
 
         mnuHasil.setText("Hasil Perhitungan Kinerja");
+        mnuHasil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuHasilActionPerformed(evt);
+            }
+        });
         jMenu1.add(mnuHasil);
 
         jMenuBar2.add(jMenu1);
@@ -213,6 +223,16 @@ public class ViewMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         ControllerStartAnalisis controllerStartAnalisis = new ControllerStartAnalisis(this);
     }//GEN-LAST:event_mnuStartAnalisisActionPerformed
+
+    private void mnuHasilBobotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuHasilBobotActionPerformed
+        // TODO add your handling code here:
+        new ViewNilaiBobot().setVisible(true);
+    }//GEN-LAST:event_mnuHasilBobotActionPerformed
+
+    private void mnuHasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuHasilActionPerformed
+        // TODO add your handling code here:
+        new ViewHasil().setVisible(true);
+    }//GEN-LAST:event_mnuHasilActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;

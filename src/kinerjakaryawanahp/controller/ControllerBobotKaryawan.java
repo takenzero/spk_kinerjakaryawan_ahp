@@ -91,8 +91,6 @@ public class ControllerBobotKaryawan {
         mb.setSubKriteria((ModelSubKriteria) frm.getCboSubKriteria().getSelectedItem());
         mb.setKriteria((ModelKriteria) frm.getCboKriteria().getSelectedItem());
         
-        //JOptionPane.showMessageDialog(frm, in_bobot.bobotIsExists(mb.getKaryawan().getIdKaryawan(), mb.getKriteria().getIdKriteria()));
-        
         if (in_bobot.bobotIsExists(mb.getKaryawan().getIdKaryawan(), mb.getKriteria().getIdKriteria())){
             in_bobot.delete(mb);
         }

@@ -114,11 +114,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hasil Perhitungan Bobot"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuHasilBobotActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuHasil">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hasil Perhitungan Kinerja"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuHasilActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
